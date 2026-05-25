@@ -1,0 +1,1490 @@
+swagger: '2.0'
+info:
+  title: Takealot Seller API
+  description: The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able
+    to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller
+    API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to
+    use this API.  Please note that none of these requests are authorised if you are trying via the "try it out" button.  You
+    will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised
+    against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The
+    below documentation describes each endpoint of the API.
+  version: '2.0'
+host: seller-api.takealot.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+- text/csv
+- application/pdf
+- text/html
+basePath: /
+definitions:
+  V2Offers:
+    type: object
+    properties:
+      total_results:
+        type: integer
+      page_size:
+        type: integer
+      page_number:
+        type: integer
+      offers:
+        type: array
+        items:
+          $ref: '#/definitions/V2Offer'
+  ViewSalesResponse:
+    type: object
+    properties:
+      page_summary:
+        $ref: '#/definitions/PageSummary'
+      sales:
+        type: array
+        items:
+          $ref: '#/definitions/Sale'
+  V2OfferSingleUpdate:
+    type: object
+    properties:
+      sku:
+        type: string
+        description: The unique SKU of the offer. Please send us a unique sku whose length is less than 256 characters.
+        maxLength: 255
+      selling_price:
+        type: integer
+        description: The price at which the offer will sell for on Takealot (promotion prices will be prioitised). Please
+          ensure you supply us with a positive whole number.
+      rrp:
+        type: integer
+        description: The original price of the offer. Please ensure you supply us with a positive whole number.
+      leadtime_days:
+        type: integer
+        description: The leadtime days of the offer. You can remove leadtime days from your offer by sending through -1.
+      leadtime_stock:
+        type: array
+        description: The leadtime stock of the offer. Please ensure that the merchant_warehouse_id is correct, found at https://seller.takealot.com/api/seller-api/offers
+          and send a positive whole number for the quantity.
+        items:
+          type: object
+          properties:
+            merchant_warehouse_id:
+              type: integer
+            quantity:
+              type: integer
+      status_action:
+        type: string
+        description: This allows you to set the status of the offer to 'Disabled by Seller' (by sending through Disable) or
+          'Buyable' or 'Not Buyable' (by sending through Re-enable), depending on what rules are satisfied.
+        enum:
+        - Disable
+        - Re-enable
+  Error:
+    type: object
+    properties:
+      fields:
+        type: string
+      message:
+        type: string
+      status:
+        format: int32
+        type: integer
+  PageSummary:
+    type: object
+    properties:
+      page_size:
+        type: integer
+      page_number:
+        type: integer
+      total:
+        type: integer
+  V2OfferUpdateSuccessResponse:
+    type: object
+    properties:
+      offer:
+        $ref: '#/definitions/V2Offer'
+      validation_errors:
+        type: array
+        items:
+          type: object
+          properties:
+            message:
+              type: string
+            code:
+              type: string
+  V2OfferBatchCreateUpdate:
+    type: object
+    properties:
+      offer_id:
+        type: integer
+        description: The unique ID of the offer
+      sku:
+        type: string
+        description: The unique SKU of the offer - this can be used as an identifier or a field to update. Please send us
+          a unique sku whose length is less than 256 characters.
+      barcode:
+        type: string
+        description: The barcode that exists in Takealot's Catalogue - this can be used to create a new offer
+      selling_price:
+        type: integer
+        description: The price at which the offer will sell for on Takealot (promotion prices will be prioitised). Please
+          ensure you supply us with a positive whole number.
+      rrp:
+        type: integer
+        description: The original price of the offer. Please ensure you supply us with a positive whole number.
+      leadtime_days:
+        type: integer
+        description: The leadtime days of the offer. You can remove leadtime days from your offer by sending through -1.
+      leadtime_stock:
+        type: array
+        description: The leadtime stock of the offer. Please ensure that the merchant_warehouse_id is correct, found at https://seller.takealot.com/api/seller-api/offers
+          and send a positive whole number for the quantity.
+        items:
+          type: object
+          properties:
+            merchant_warehouse_id:
+              type: integer
+            quantity:
+              type: integer
+      status_action:
+        type: string
+        description: This allows you to set the status of the offer to 'Disabled by Seller' (by sending through Disable) or
+          'Buyable' or 'Not Buyable' (by sending through Re-enable), depending on what rules are satisfied.
+        enum:
+        - Disable
+        - Re-enable
+  V2OfferSingleCreate:
+    type: object
+    properties:
+      sku:
+        type: string
+        description: The unique SKU of the offer. Please send us a unique sku whose length is less than 256 characters.
+      selling_price:
+        type: integer
+        description: The price at which the offer will sell for on Takealot (promotion prices will be prioitised). Please
+          ensure you supply us with a positive whole number.
+      rrp:
+        type: integer
+        description: The original price of the offer. Please ensure you supply us with a positive whole number.
+      leadtime_days:
+        type: integer
+        description: The leadtime days of the offer. You can remove leadtime days from your offer by sending through -1.
+      leadtime_stock:
+        type: array
+        description: The leadtime stock of the offer. Please ensure that the merchant_warehouse_id is correct, found at https://seller.takealot.com/api/seller-api/offers
+          and send a positive whole number for the quantity.
+        items:
+          type: object
+          properties:
+            merchant_warehouse_id:
+              type: integer
+            quantity:
+              type: integer
+  ViewSalesOrdersResponse:
+    type: object
+    properties:
+      page_summary:
+        $ref: '#/definitions/PageSummary'
+      sales:
+        type: array
+        items:
+          $ref: '#/definitions/Sale'
+  V2OfferBatch:
+    type: object
+    properties:
+      batch_id:
+        type: string
+      status:
+        type: object
+        properties:
+          description:
+            type: string
+          id:
+            type: integer
+      result:
+        type: array
+        items:
+          type: object
+          properties:
+            validation_errors:
+              type: array
+              items:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  code:
+                    type: string
+            offer:
+              type: object
+              properties:
+                selling_price:
+                  type: integer
+                rrp:
+                  type: integer
+                leadtime_days:
+                  type: integer
+                leadtime_stock:
+                  type: array
+                  items:
+                    $ref: '#/definitions/V2OfferLeadtimeStock'
+                stock_at_takealot:
+                  type: array
+                  items:
+                    $ref: '#/definitions/V2OfferWarehouseStock'
+                status:
+                  type: string
+                sku:
+                  type: string
+                offer_id:
+                  type: integer
+  V2OfferLeadtimeStock:
+    type: object
+    properties:
+      merchant_warehouse:
+        type: object
+        properties:
+          warehouse_id:
+            type: integer
+          name:
+            type: string
+      quantity_available:
+        type: integer
+  V2Offer:
+    type: object
+    properties:
+      tsin_id:
+        type: integer
+      offer_id:
+        type: integer
+      sku:
+        type: string
+      barcode:
+        type: string
+      product_label_number:
+        type: string
+      selling_price:
+        type: integer
+      rrp:
+        type: integer
+      leadtime_days:
+        type: integer
+      leadtime_stock:
+        type: array
+        items:
+          $ref: '#/definitions/V2OfferLeadtimeStock'
+      status:
+        type: string
+      title:
+        type: string
+      offer_url:
+        type: string
+      stock_cover:
+        type: array
+        items:
+          $ref: '#/definitions/V2StockCover'
+      sales_units:
+        type: array
+        items:
+          $ref: '#/definitions/V2SalesUnits'
+      discount:
+        type: string
+      discount_shown:
+        type: boolean
+      storage_fee_eligible:
+        type: boolean
+      date_created:
+        type: string
+      stock_at_takealot_total:
+        type: integer
+      total_excess_takealot_stock:
+        type: integer
+      stock_at_takealot:
+        type: array
+        items:
+          $ref: '#/definitions/V2OfferWarehouseStock'
+      stock_on_way:
+        type: array
+        items:
+          $ref: '#/definitions/V2OfferWarehouseStock'
+      total_stock_on_way:
+        type: integer
+      total_stock_cover:
+        type: integer
+      catalogue_quality_score:
+        type: integer
+  V2StockCover:
+    type: object
+    description: please note that 0 means there is no stock and hence no cover. -1 means there have been no sales units in
+      the past 30 days hence stock cover cannot be determined.
+    properties:
+      warehouse_id:
+        type: integer
+      stock_cover_days:
+        type: integer
+  V2SalesUnits:
+    type: object
+    properties:
+      warehouse_id:
+        type: integer
+      sales_units:
+        type: integer
+  Sale:
+    type: object
+    properties:
+      shipment_id:
+        type: integer
+        x-nullable: true
+      shipment_state_id:
+        type: integer
+        x-nullable: true
+      po_number:
+        type: integer
+        x-nullable: true
+      shipment_name:
+        type: string
+        x-nullable: true
+      offer_id:
+        type: integer
+      product_title:
+        type: string
+      takealot_url_mobi:
+        type: string
+      sku:
+        type: string
+      tsin:
+        type: integer
+      order_id:
+        type: integer
+      order_item_id:
+        type: integer
+      quantity:
+        type: integer
+      selling_price:
+        type: number
+      dc:
+        type: string
+      customer_dc:
+        type: string
+      order_date:
+        type: string
+      sale_status:
+        type: boolean
+      promotion:
+        type: boolean
+        x-nullable: true
+      customer:
+        type: string
+      stock_source_region:
+        type: string
+  V2OfferWarehouseStock:
+    type: object
+    properties:
+      warehouse:
+        type: object
+        properties:
+          warehouse_id:
+            type: integer
+          name:
+            type: string
+      quantity_available:
+        type: integer
+  SalesSummaryResponse:
+    type: object
+    properties:
+      sales_summary:
+        type: array
+        items:
+          $ref: '#/definitions/SaleSummary'
+  SaleSummary:
+    type: object
+    properties:
+      date_range:
+        type: string
+      total:
+        type: number
+      quantity:
+        type: integer
+  CustomerInvoicesResponse:
+    type: object
+    properties:
+      documents:
+        type: array
+        items:
+          type: object
+          properties:
+            document_id:
+              type: integer
+            document_date:
+              type: string
+            document_type:
+              type: string
+            document_reason:
+              type: string
+            file_name:
+              type: string
+            downloadable:
+              type: boolean
+paths:
+  /v2/offers:
+    get:
+      operationId: get_offers_v2
+      description: Retrieve information about your offers on the Takealot platform
+      summary: Get All Offers (v2)
+      parameters:
+      - name: page_number
+        in: query
+        type: integer
+        description: The page number to retrieve (starting at 1).
+      - name: page_size
+        in: query
+        type: integer
+        description: The number of offers per page. Limited to 100.
+      - name: filters
+        in: query
+        description: This field has been deprecated. Please do not use it.
+        type: array
+        items:
+          type: string
+      - name: sort_key
+        in: query
+        type: string
+        enum:
+        - offer_id
+        - title
+        - seller_stock
+        - sales_units
+        - stock_cpt
+        - stock_jhb
+        - stock_total
+        - stock_cover_cpt
+        - stock_cover_jhb
+        - selling_price
+        - shipping_min
+        - merchant_warehouse_id
+        - replen_block
+        description: This field has been deprecated. Please do not use it.
+      - name: sort_dir
+        in: query
+        type: string
+        enum:
+        - asc
+        - desc
+        - ASC
+        - DESC
+        description: This field has been deprecated. Please do not use it.
+      - name: secondary_sort_key
+        in: query
+        type: string
+        enum:
+        - title
+        description: This field has been deprecated. Please do not use it.
+      - name: secondary_sort_dir
+        in: query
+        type: string
+        enum:
+        - asc
+        - desc
+        - ASC
+        - DESC
+        description: This field has been deprecated. Please do not use it.
+      - name: is_filtered
+        in: query
+        type: boolean
+        description: This field has been deprecated. Please do not use it.
+      - name: offer_ids
+        in: query
+        type: array
+        items:
+          type: integer
+        description: A list of offer ids to retrieve.
+      tags:
+      - Get offers
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2Offers'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '400':
+          description: Bad Request Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+  /v2/offers/count:
+    get:
+      operationId: get_offers_count_v2
+      description: Retrieve the total number of your offers on the Takealot platform (optionally filtered by offer status)
+      summary: Get Offers Count (v2)
+      parameters:
+      - name: offer_statuses
+        in: query
+        description: A list of offer statuses to filter by. Example - ?offer_statuses=Buyable,Not Buyable
+        type: array
+        items:
+          type: string
+          enum:
+          - Buyable
+          - Not Buyable
+          - Disabled by Seller
+          - Disabled by Takealot
+      tags:
+      - Get offers count
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              count:
+                type: integer
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+  /v2/offers/offer/{identifier}:
+    get:
+      operationId: get_offer_by_identifier_v2
+      description: Retrieve information about an individual offer by providing an identifier for the offer
+      summary: Get An Offer (v2)
+      parameters:
+      - name: identifier
+        in: path
+        type: string
+        description: Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU.
+          e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID.
+        required: true
+      tags:
+      - Get an offer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2Offer'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '404':
+          description: Not Found Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+    patch:
+      operationId: update_offer_by_identifier_v2
+      description: Update an offer by providing an identifier for the offer
+      summary: Update An Offer (v2)
+      parameters:
+      - name: identifier
+        in: path
+        type: string
+        description: Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU.
+          e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID.
+        required: true
+      - name: offer
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/V2OfferSingleUpdate'
+      tags:
+      - Update an offer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2OfferUpdateSuccessResponse'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '400':
+          description: Bad Request Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '404':
+          description: Not Found Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+    post:
+      operationId: create_offer_by_identifier_v2
+      description: Create an offer by providing the variant's Barcode
+      summary: Create An Offer (v2)
+      parameters:
+      - name: identifier
+        in: path
+        type: string
+        description: The Barcode for the variant to create an offer against. It is not required to prepend BARCODE.
+        required: true
+      - name: offer
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/V2OfferSingleCreate'
+      tags:
+      - Create an offer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2OfferUpdateSuccessResponse'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '400':
+          description: Bad Request Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '404':
+          description: Not Found Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+  /v2/offers/offer:
+    get:
+      operationId: get_offer_by_identifier_query_v2
+      description: Retrieve information about an individual offer by providing an identifier for the offer
+      summary: Get An Offer (v2)
+      parameters:
+      - name: identifier
+        in: query
+        type: string
+        description: Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU.
+          e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID.
+        required: true
+      tags:
+      - Get an offer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2Offer'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '404':
+          description: Not Found Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+    patch:
+      operationId: update_offer_by_identifier_query_v2
+      description: Update an offer by providing an identifier for the offer
+      summary: Update An Offer (v2)
+      parameters:
+      - name: identifier
+        in: query
+        type: string
+        description: Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU.
+          e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID.
+        required: true
+      - name: offer
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/V2OfferSingleUpdate'
+      tags:
+      - Update an offer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2OfferUpdateSuccessResponse'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '400':
+          description: Bad Request Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '404':
+          description: Not Found Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+    post:
+      operationId: create_offer_by_identifier_query_v2
+      description: Create an offer by providing the variant's Barcode
+      summary: Create An Offer (v2)
+      parameters:
+      - name: identifier
+        in: query
+        type: string
+        description: The Barcode for the variant to create an offer against. It is not required to prepend BARCODE.
+        required: true
+      - name: offer
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/V2OfferSingleCreate'
+      tags:
+      - Create an offer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2OfferUpdateSuccessResponse'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '400':
+          description: Bad Request Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '404':
+          description: Not Found Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+  /v2/offers/batch:
+    post:
+      operationId: create_batch_v2
+      description: Create or update multiple offers by submitting a batch. Please note there is a 10k size limit - batches
+        larger than this limit will be rejected.
+      summary: Create A Batch (v2)
+      parameters:
+      - name: offers
+        in: body
+        required: true
+        schema:
+          type: array
+          items:
+            $ref: '#/definitions/V2OfferBatchCreateUpdate'
+          maxItems: 10000
+      tags:
+      - Create a batch
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2OfferBatch'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '400':
+          description: Bad Request Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+  /v2/offers/batch/{batch_id}:
+    get:
+      operationId: get_batch_v2
+      description: Query the current status of a batch, and view results if they are available
+      summary: Get Batch Information (v2)
+      parameters:
+      - name: batch_id
+        in: path
+        type: string
+        description: The ID of the batch you have submitted, provided to you by Takealot
+        required: true
+      tags:
+      - Get a batch
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2OfferBatch'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '404':
+          description: Not Found Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+  /{version}/offers/stock_counts:
+    get:
+      operationId: get_total_and_unbalanced_stock_at_tal_counts
+      description: Retrieve the total number of your offers that have stock at Takealot, as well as the number of offers that
+        have an unbalanced stock level at Takealot
+      summary: Get Count Of Offers With Stock At Takealot And Unbalanced Stock At Takealot
+      parameters:
+      - name: version
+        in: path
+        type: string
+        required: true
+        description: The major version of the API, prepended with a v (e.g. v1)
+      tags:
+      - Get stock counts
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              count:
+                type: integer
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+  /{version}/offers/stock_health_stats:
+    get:
+      operationId: get_stock_health_stats
+      description: Retrieve your stock health statistics
+      summary: Get Various Statistics Regarding Your Stock Health
+      parameters:
+      - name: version
+        in: path
+        type: string
+        required: true
+        description: The major version of the API, prepended with a v (e.g. v1)
+      tags:
+      - Get stock health
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              storage_fee_enabled_offer_count:
+                type: integer
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+  /{version}/sales:
+    get:
+      operationId: view_sales
+      description: Get sales based on filters passed through
+      summary: Retrieve Information About Your Sales On The Takealot Platform
+      parameters:
+      - name: version
+        in: path
+        required: true
+        type: string
+        description: The major version of the API, prepended with a v (e.g. v1)
+      - name: filters
+        in: query
+        description: 'A list of search parameters (supported fields are start_date, end_date, sku, product_title, tsin, dc,
+          customer_dc, sale_status, po_number, order_id, promotion) e.g. ?filters=sku:foo;title:bar
+
+          '
+        type: array
+        items:
+          type: string
+      - name: page_number
+        in: query
+        type: integer
+        description: The page number to retrieve (starting at 1)
+      - name: page_size
+        in: query
+        type: integer
+        description: The number of sales per page. Limited to 100.
+      tags:
+      - view sales
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ViewSalesResponse'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /{version}/sales/summary:
+    get:
+      operationId: get_sales_summary
+      description: Get sales summary
+      summary: Retrieve Information About Your Sales Summary Over Various Date Ranges
+      parameters:
+      - name: version
+        in: path
+        required: true
+        type: string
+        description: The major version of the API, prepended with a v (e.g. v1)
+      tags:
+      - sales summary
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SalesSummaryResponse'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /{version}/sales/orders:
+    get:
+      operationId: get_sales_orders
+      description: Get sales orders based on filters passed through
+      summary: Retrieve Information About Your Sales Orders On The Takealot Platform
+      parameters:
+      - name: version
+        in: path
+        required: true
+        type: string
+        description: The major version of the API, prepended with a v (e.g. v1)
+      - name: start_date
+        in: query
+        type: string
+        description: The start date for filtering orders
+        required: true
+      - name: end_date
+        in: query
+        type: string
+        description: The end date for filtering orders
+        required: true
+      - name: sku
+        in: query
+        type: string
+        description: The SKU for filtering orders
+      - name: product_title
+        in: query
+        type: string
+        description: The product title for filtering orders
+      - name: tsin
+        in: query
+        type: integer
+        description: The TSIN for filtering orders
+      - name: order_id
+        in: query
+        type: integer
+        description: The order ID for filtering orders
+      - name: page_number
+        in: query
+        type: integer
+        description: The page number to retrieve (starting at 1)
+      - name: page_size
+        in: query
+        type: integer
+        description: The number of sales per page. Limited to 100.
+      tags:
+      - view sales orders
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ViewSalesOrdersResponse'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /{version}/sales/orders/{order_id}/customer_invoices:
+    get:
+      operationId: get_sales_order_customer_invoices_credit_notes
+      description: Get sales orders based on filters passed through
+      summary: Retrieve Information About Your Sales Orders On The Takealot Platform
+      parameters:
+      - name: version
+        in: path
+        required: true
+        type: string
+        description: The major version of the API, prepended with a v (e.g. v1)
+      - name: order_id
+        in: path
+        type: integer
+        description: The start date for filtering orders
+        required: true
+      tags:
+      - view sales orders
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CustomerInvoicesResponse'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
