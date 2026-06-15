@@ -1,0 +1,4686 @@
+{
+  "item": [
+    {
+      "id": "3fd4a0bf-97cd-4642-86c9-e473af3380a4",
+      "name": "Get offers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9e8642ac-153d-4aeb-a823-57508bbcb0d4",
+          "name": "Get All Offers (v2)",
+          "request": {
+            "name": "Get All Offers (v2)",
+            "description": {
+              "content": "Retrieve information about your offers on the Takealot platform",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "The page number to retrieve (starting at 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "The number of offers per page. Limited to 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>,<string>",
+                  "description": "This field has been deprecated. Please do not use it."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_key",
+                  "value": "<string>",
+                  "description": "This field has been deprecated. Please do not use it."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_dir",
+                  "value": "<string>",
+                  "description": "This field has been deprecated. Please do not use it."
+                },
+                {
+                  "disabled": false,
+                  "key": "secondary_sort_key",
+                  "value": "<string>",
+                  "description": "This field has been deprecated. Please do not use it."
+                },
+                {
+                  "disabled": false,
+                  "key": "secondary_sort_dir",
+                  "value": "<string>",
+                  "description": "This field has been deprecated. Please do not use it."
+                },
+                {
+                  "disabled": false,
+                  "key": "is_filtered",
+                  "value": "<boolean>",
+                  "description": "This field has been deprecated. Please do not use it."
+                },
+                {
+                  "disabled": false,
+                  "key": "offer_ids",
+                  "value": "<integer>,<integer>",
+                  "description": "A list of offer ids to retrieve."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2ebf595-3ed4-4da1-823d-faa9108f2a7e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "sort_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secondary_sort_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secondary_sort_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_filtered",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "offer_ids",
+                      "value": "<integer>,<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_results\": 4405,\n  \"page_size\": 7973,\n  \"page_number\": 7897,\n  \"offers\": [\n    {\n      \"tsin_id\": 4510,\n      \"offer_id\": 3627,\n      \"sku\": \"string\",\n      \"barcode\": \"string\",\n      \"product_label_number\": \"string\",\n      \"selling_price\": 8287,\n      \"rrp\": 3614,\n      \"leadtime_days\": 9614,\n      \"leadtime_stock\": [\n        {\n          \"merchant_warehouse\": {\n            \"warehouse_id\": 4328,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 883\n        },\n        {\n          \"merchant_warehouse\": {\n            \"warehouse_id\": 2612,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 4335\n        }\n      ],\n      \"status\": \"string\",\n      \"title\": \"string\",\n      \"offer_url\": \"string\",\n      \"stock_cover\": [\n        {\n          \"warehouse_id\": 694,\n          \"stock_cover_days\": 9033\n        },\n        {\n          \"warehouse_id\": 9012,\n          \"stock_cover_days\": 8404\n        }\n      ],\n      \"sales_units\": [\n        {\n          \"warehouse_id\": 7975,\n          \"sales_units\": 9591\n        },\n        {\n          \"warehouse_id\": 4485,\n          \"sales_units\": 8340\n        }\n      ],\n      \"discount\": \"string\",\n      \"discount_shown\": true,\n      \"storage_fee_eligible\": false,\n      \"date_created\": \"string\",\n      \"stock_at_takealot_total\": 7602,\n      \"total_excess_takealot_stock\": 2212,\n      \"stock_at_takealot\": [\n        {\n          \"warehouse\": {\n            \"warehouse_id\": 2672,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 2143\n        },\n        {\n          \"warehouse\": {\n            \"warehouse_id\": 771,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 1855\n        }\n      ],\n      \"stock_on_way\": [\n        {\n          \"warehouse\": {\n            \"warehouse_id\": 3715,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 4305\n        },\n        {\n          \"warehouse\": {\n            \"warehouse_id\": 8072,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 9943\n        }\n      ],\n      \"total_stock_on_way\": 1908,\n      \"total_stock_cover\": 8245,\n      \"catalogue_quality_score\": 8560\n    },\n    {\n      \"tsin_id\": 1877,\n      \"offer_id\": 9672,\n      \"sku\": \"string\",\n      \"barcode\": \"string\",\n      \"product_label_number\": \"string\",\n      \"selling_price\": 8482,\n      \"rrp\": 3479,\n      \"leadtime_days\": 1753,\n      \"leadtime_stock\": [\n        {\n          \"merchant_warehouse\": {\n            \"warehouse_id\": 7492,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 9219\n        },\n        {\n          \"merchant_warehouse\": {\n            \"warehouse_id\": 5609,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 9673\n        }\n      ],\n      \"status\": \"string\",\n      \"title\": \"string\",\n      \"offer_url\": \"string\",\n      \"stock_cover\": [\n        {\n          \"warehouse_id\": 4047,\n          \"stock_cover_days\": 3790\n        },\n        {\n          \"warehouse_id\": 5429,\n          \"stock_cover_days\": 4793\n        }\n      ],\n      \"sales_units\": [\n        {\n          \"warehouse_id\": 3276,\n          \"sales_units\": 6074\n        },\n        {\n          \"warehouse_id\": 8641,\n          \"sales_units\": 6220\n        }\n      ],\n      \"discount\": \"string\",\n      \"discount_shown\": false,\n      \"storage_fee_eligible\": false,\n      \"date_created\": \"string\",\n      \"stock_at_takealot_total\": 7666,\n      \"total_excess_takealot_stock\": 860,\n      \"stock_at_takealot\": [\n        {\n          \"warehouse\": {\n            \"warehouse_id\": 5478,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 3852\n        },\n        {\n          \"warehouse\": {\n            \"warehouse_id\": 6760,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 3168\n        }\n      ],\n      \"stock_on_way\": [\n        {\n          \"warehouse\": {\n            \"warehouse_id\": 5997,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 4525\n        },\n        {\n          \"warehouse\": {\n            \"warehouse_id\": 2770,\n            \"name\": \"string\"\n          },\n          \"quantity_available\": 5636\n        }\n      ],\n      \"total_stock_on_way\": 6562,\n      \"total_stock_cover\": 6110,\n      \"catalogue_quality_score\": 5129\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "722e1f2e-cdac-4f11-b76b-1440258ff16a",
+              "name": "Bad Request Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "sort_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secondary_sort_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secondary_sort_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_filtered",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "offer_ids",
+                      "value": "<integer>,<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7019aec9-1f8c-451b-ad35-c5249020754d",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "sort_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secondary_sort_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secondary_sort_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_filtered",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "offer_ids",
+                      "value": "<integer>,<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c0ae29b8-dd44-4eb7-8d0a-99bbf870336a",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "sort_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secondary_sort_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "secondary_sort_dir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_filtered",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "offer_ids",
+                      "value": "<integer>,<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "985fae73-ae2a-4ef3-8519-5e5f379b6326",
+      "name": "Get offers count",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c72069d6-2208-481b-8d73-c1fc3ce48bb7",
+          "name": "Get Offers Count (v2)",
+          "request": {
+            "name": "Get Offers Count (v2)",
+            "description": {
+              "content": "Retrieve the total number of your offers on the Takealot platform (optionally filtered by offer status)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offer_statuses",
+                  "value": "<string>,<string>",
+                  "description": "A list of offer statuses to filter by. Example - ?offer_statuses=Buyable,Not Buyable"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2603a344-cf65-4a82-b309-ebafb4577c91",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offer_statuses",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 4402\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "851c140f-b1a2-4940-b18b-12d45de98bed",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offer_statuses",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1518e745-1922-4558-a9e1-ac4a5a0c6105",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offer_statuses",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "db692f41-e12b-45be-a39d-6302be05b655",
+      "name": "Get an offer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0203887b-ee8c-406a-9fc0-d41e73bc130c",
+          "name": "Get An Offer (v2)",
+          "request": {
+            "name": "Get An Offer (v2)",
+            "description": {
+              "content": "Retrieve information about an individual offer by providing an identifier for the offer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "offer",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ddef9d0-40f8-4d5e-af5a-52a913d566b0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tsin_id\": 1156,\n  \"offer_id\": 2914,\n  \"sku\": \"string\",\n  \"barcode\": \"string\",\n  \"product_label_number\": \"string\",\n  \"selling_price\": 101,\n  \"rrp\": 6182,\n  \"leadtime_days\": 9611,\n  \"leadtime_stock\": [\n    {\n      \"merchant_warehouse\": {\n        \"warehouse_id\": 4971,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 1652\n    },\n    {\n      \"merchant_warehouse\": {\n        \"warehouse_id\": 2769,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 2782\n    }\n  ],\n  \"status\": \"string\",\n  \"title\": \"string\",\n  \"offer_url\": \"string\",\n  \"stock_cover\": [\n    {\n      \"warehouse_id\": 1956,\n      \"stock_cover_days\": 3782\n    },\n    {\n      \"warehouse_id\": 5982,\n      \"stock_cover_days\": 5203\n    }\n  ],\n  \"sales_units\": [\n    {\n      \"warehouse_id\": 4459,\n      \"sales_units\": 2464\n    },\n    {\n      \"warehouse_id\": 9548,\n      \"sales_units\": 5261\n    }\n  ],\n  \"discount\": \"string\",\n  \"discount_shown\": true,\n  \"storage_fee_eligible\": false,\n  \"date_created\": \"string\",\n  \"stock_at_takealot_total\": 5030,\n  \"total_excess_takealot_stock\": 3691,\n  \"stock_at_takealot\": [\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 7687,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 7616\n    },\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 2226,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 2192\n    }\n  ],\n  \"stock_on_way\": [\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 7427,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 2527\n    },\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 6292,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 5478\n    }\n  ],\n  \"total_stock_on_way\": 3633,\n  \"total_stock_cover\": 1565,\n  \"catalogue_quality_score\": 4623\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72615cde-f843-4850-87e2-bae8eaa4a827",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe343bd5-3c66-4672-bf29-f2921a315023",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "011962cf-5fed-4773-aa20-454fec461a91",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3bd7aaca-9196-4154-906e-4d3d92c9f6cf",
+          "name": "Get An Offer (v2)",
+          "request": {
+            "name": "Get An Offer (v2)",
+            "description": {
+              "content": "Retrieve information about an individual offer by providing an identifier for the offer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "offer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22b4af28-9f09-4e74-a45a-e469d44a38d8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tsin_id\": 1156,\n  \"offer_id\": 2914,\n  \"sku\": \"string\",\n  \"barcode\": \"string\",\n  \"product_label_number\": \"string\",\n  \"selling_price\": 101,\n  \"rrp\": 6182,\n  \"leadtime_days\": 9611,\n  \"leadtime_stock\": [\n    {\n      \"merchant_warehouse\": {\n        \"warehouse_id\": 4971,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 1652\n    },\n    {\n      \"merchant_warehouse\": {\n        \"warehouse_id\": 2769,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 2782\n    }\n  ],\n  \"status\": \"string\",\n  \"title\": \"string\",\n  \"offer_url\": \"string\",\n  \"stock_cover\": [\n    {\n      \"warehouse_id\": 1956,\n      \"stock_cover_days\": 3782\n    },\n    {\n      \"warehouse_id\": 5982,\n      \"stock_cover_days\": 5203\n    }\n  ],\n  \"sales_units\": [\n    {\n      \"warehouse_id\": 4459,\n      \"sales_units\": 2464\n    },\n    {\n      \"warehouse_id\": 9548,\n      \"sales_units\": 5261\n    }\n  ],\n  \"discount\": \"string\",\n  \"discount_shown\": true,\n  \"storage_fee_eligible\": false,\n  \"date_created\": \"string\",\n  \"stock_at_takealot_total\": 5030,\n  \"total_excess_takealot_stock\": 3691,\n  \"stock_at_takealot\": [\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 7687,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 7616\n    },\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 2226,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 2192\n    }\n  ],\n  \"stock_on_way\": [\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 7427,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 2527\n    },\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 6292,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 5478\n    }\n  ],\n  \"total_stock_on_way\": 3633,\n  \"total_stock_cover\": 1565,\n  \"catalogue_quality_score\": 4623\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "544caca1-f9a1-463c-9f60-5a7017bcd876",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "35e073de-811c-4c1e-a1cd-1005f228807e",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bca332a-8c21-4f38-8679-ed56022a589b",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4ac70918-0603-4862-949b-6dda0e5b4410",
+      "name": "Update an offer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9b20de29-053c-4a58-8536-6fa2b11e87c6",
+          "name": "Update An Offer (v2)",
+          "request": {
+            "name": "Update An Offer (v2)",
+            "description": {
+              "content": "Update an offer by providing an identifier for the offer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "offer",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"<string>\",\n  \"selling_price\": \"<integer>\",\n  \"rrp\": \"<integer>\",\n  \"leadtime_days\": \"<integer>\",\n  \"leadtime_stock\": [\n    {\n      \"merchant_warehouse_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"merchant_warehouse_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    }\n  ],\n  \"status_action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a7f1f39-4a76-4565-8d52-109c0d346b5f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"offer\": {\n    \"tsin_id\": 378,\n    \"offer_id\": 8141,\n    \"sku\": \"string\",\n    \"barcode\": \"string\",\n    \"product_label_number\": \"string\",\n    \"selling_price\": 7072,\n    \"rrp\": 5579,\n    \"leadtime_days\": 9200,\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse\": {\n          \"warehouse_id\": 6035,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 5425\n      },\n      {\n        \"merchant_warehouse\": {\n          \"warehouse_id\": 1492,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 9391\n      }\n    ],\n    \"status\": \"string\",\n    \"title\": \"string\",\n    \"offer_url\": \"string\",\n    \"stock_cover\": [\n      {\n        \"warehouse_id\": 8542,\n        \"stock_cover_days\": 5074\n      },\n      {\n        \"warehouse_id\": 8124,\n        \"stock_cover_days\": 8083\n      }\n    ],\n    \"sales_units\": [\n      {\n        \"warehouse_id\": 82,\n        \"sales_units\": 364\n      },\n      {\n        \"warehouse_id\": 4613,\n        \"sales_units\": 8156\n      }\n    ],\n    \"discount\": \"string\",\n    \"discount_shown\": true,\n    \"storage_fee_eligible\": false,\n    \"date_created\": \"string\",\n    \"stock_at_takealot_total\": 4618,\n    \"total_excess_takealot_stock\": 8335,\n    \"stock_at_takealot\": [\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 3794,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 8045\n      },\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 8242,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 2755\n      }\n    ],\n    \"stock_on_way\": [\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 1781,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 3956\n      },\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 3753,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 8308\n      }\n    ],\n    \"total_stock_on_way\": 6558,\n    \"total_stock_cover\": 778,\n    \"catalogue_quality_score\": 1336\n  },\n  \"validation_errors\": [\n    {\n      \"message\": \"string\",\n      \"code\": \"string\"\n    },\n    {\n      \"message\": \"string\",\n      \"code\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "680765b4-bacf-4a6e-87fa-78307a59f1f1",
+              "name": "Bad Request Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89d1a790-3742-42c2-8f89-79506f506410",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "503ddaa1-ecae-4b47-9189-5a6fa56ce0da",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4248124e-d553-45d8-a463-92da8fa87d8b",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "450abad2-d23c-4cc9-b67a-90d9aa23fcba",
+          "name": "Update An Offer (v2)",
+          "request": {
+            "name": "Update An Offer (v2)",
+            "description": {
+              "content": "Update an offer by providing an identifier for the offer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "offer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"<string>\",\n  \"selling_price\": \"<integer>\",\n  \"rrp\": \"<integer>\",\n  \"leadtime_days\": \"<integer>\",\n  \"leadtime_stock\": [\n    {\n      \"merchant_warehouse_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"merchant_warehouse_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    }\n  ],\n  \"status_action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ab90cc14-75e5-4f03-9ba5-c44dee44fab6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"offer\": {\n    \"tsin_id\": 378,\n    \"offer_id\": 8141,\n    \"sku\": \"string\",\n    \"barcode\": \"string\",\n    \"product_label_number\": \"string\",\n    \"selling_price\": 7072,\n    \"rrp\": 5579,\n    \"leadtime_days\": 9200,\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse\": {\n          \"warehouse_id\": 6035,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 5425\n      },\n      {\n        \"merchant_warehouse\": {\n          \"warehouse_id\": 1492,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 9391\n      }\n    ],\n    \"status\": \"string\",\n    \"title\": \"string\",\n    \"offer_url\": \"string\",\n    \"stock_cover\": [\n      {\n        \"warehouse_id\": 8542,\n        \"stock_cover_days\": 5074\n      },\n      {\n        \"warehouse_id\": 8124,\n        \"stock_cover_days\": 8083\n      }\n    ],\n    \"sales_units\": [\n      {\n        \"warehouse_id\": 82,\n        \"sales_units\": 364\n      },\n      {\n        \"warehouse_id\": 4613,\n        \"sales_units\": 8156\n      }\n    ],\n    \"discount\": \"string\",\n    \"discount_shown\": true,\n    \"storage_fee_eligible\": false,\n    \"date_created\": \"string\",\n    \"stock_at_takealot_total\": 4618,\n    \"total_excess_takealot_stock\": 8335,\n    \"stock_at_takealot\": [\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 3794,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 8045\n      },\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 8242,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 2755\n      }\n    ],\n    \"stock_on_way\": [\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 1781,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 3956\n      },\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 3753,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 8308\n      }\n    ],\n    \"total_stock_on_way\": 6558,\n    \"total_stock_cover\": 778,\n    \"catalogue_quality_score\": 1336\n  },\n  \"validation_errors\": [\n    {\n      \"message\": \"string\",\n      \"code\": \"string\"\n    },\n    {\n      \"message\": \"string\",\n      \"code\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1bc9fed0-4c3e-4d40-afa8-5c2ff67c45da",
+              "name": "Bad Request Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5bcf927-1dbf-4112-9db2-a45ef2c3a516",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a01e9d36-0d1a-4ee7-9408-515b949c73b1",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65077cbb-81d9-4e72-9496-28b05fd9a992",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d5343c58-911d-4aec-8559-2df102bb2887",
+      "name": "Create an offer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3c7c2805-a56e-4ec5-b3bf-dfc5a56ff1e3",
+          "name": "Create An Offer (v2)",
+          "request": {
+            "name": "Create An Offer (v2)",
+            "description": {
+              "content": "Create an offer by providing the variant's Barcode",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "offer",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"<string>\",\n  \"selling_price\": \"<integer>\",\n  \"rrp\": \"<integer>\",\n  \"leadtime_days\": \"<integer>\",\n  \"leadtime_stock\": [\n    {\n      \"merchant_warehouse_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"merchant_warehouse_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ce912be6-ae73-4fea-a1f0-b63988f25695",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"offer\": {\n    \"tsin_id\": 492,\n    \"offer_id\": 2789,\n    \"sku\": \"string\",\n    \"barcode\": \"string\",\n    \"product_label_number\": \"string\",\n    \"selling_price\": 636,\n    \"rrp\": 6253,\n    \"leadtime_days\": 4587,\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse\": {\n          \"warehouse_id\": 6366,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 2513\n      },\n      {\n        \"merchant_warehouse\": {\n          \"warehouse_id\": 1638,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 9183\n      }\n    ],\n    \"status\": \"string\",\n    \"title\": \"string\",\n    \"offer_url\": \"string\",\n    \"stock_cover\": [\n      {\n        \"warehouse_id\": 2344,\n        \"stock_cover_days\": 3277\n      },\n      {\n        \"warehouse_id\": 8548,\n        \"stock_cover_days\": 4182\n      }\n    ],\n    \"sales_units\": [\n      {\n        \"warehouse_id\": 7690,\n        \"sales_units\": 9322\n      },\n      {\n        \"warehouse_id\": 106,\n        \"sales_units\": 8099\n      }\n    ],\n    \"discount\": \"string\",\n    \"discount_shown\": false,\n    \"storage_fee_eligible\": false,\n    \"date_created\": \"string\",\n    \"stock_at_takealot_total\": 2201,\n    \"total_excess_takealot_stock\": 1918,\n    \"stock_at_takealot\": [\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 4450,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 8817\n      },\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 542,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 8395\n      }\n    ],\n    \"stock_on_way\": [\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 1059,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 9427\n      },\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 7602,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 2670\n      }\n    ],\n    \"total_stock_on_way\": 644,\n    \"total_stock_cover\": 8243,\n    \"catalogue_quality_score\": 7094\n  },\n  \"validation_errors\": [\n    {\n      \"message\": \"string\",\n      \"code\": \"string\"\n    },\n    {\n      \"message\": \"string\",\n      \"code\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c23298bd-d8bb-40e9-a6bb-5374fc65bcc3",
+              "name": "Bad Request Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e716d00b-b8eb-4756-baf3-933989e8a0f5",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b477cde8-636b-45d0-99de-f1fa00f13a89",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9500ca81-7055-48a6-9def-f2097141d1a8",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ebb09dcf-4d64-4004-90f6-a28b82c45efc",
+          "name": "Create An Offer (v2)",
+          "request": {
+            "name": "Create An Offer (v2)",
+            "description": {
+              "content": "Create an offer by providing the variant's Barcode",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "offer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"<string>\",\n  \"selling_price\": \"<integer>\",\n  \"rrp\": \"<integer>\",\n  \"leadtime_days\": \"<integer>\",\n  \"leadtime_stock\": [\n    {\n      \"merchant_warehouse_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    },\n    {\n      \"merchant_warehouse_id\": \"<integer>\",\n      \"quantity\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a0dfb8de-adc2-46db-90b5-e2b0717cfa54",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"offer\": {\n    \"tsin_id\": 378,\n    \"offer_id\": 8141,\n    \"sku\": \"string\",\n    \"barcode\": \"string\",\n    \"product_label_number\": \"string\",\n    \"selling_price\": 7072,\n    \"rrp\": 5579,\n    \"leadtime_days\": 9200,\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse\": {\n          \"warehouse_id\": 6035,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 5425\n      },\n      {\n        \"merchant_warehouse\": {\n          \"warehouse_id\": 1492,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 9391\n      }\n    ],\n    \"status\": \"string\",\n    \"title\": \"string\",\n    \"offer_url\": \"string\",\n    \"stock_cover\": [\n      {\n        \"warehouse_id\": 8542,\n        \"stock_cover_days\": 5074\n      },\n      {\n        \"warehouse_id\": 8124,\n        \"stock_cover_days\": 8083\n      }\n    ],\n    \"sales_units\": [\n      {\n        \"warehouse_id\": 82,\n        \"sales_units\": 364\n      },\n      {\n        \"warehouse_id\": 4613,\n        \"sales_units\": 8156\n      }\n    ],\n    \"discount\": \"string\",\n    \"discount_shown\": true,\n    \"storage_fee_eligible\": false,\n    \"date_created\": \"string\",\n    \"stock_at_takealot_total\": 4618,\n    \"total_excess_takealot_stock\": 8335,\n    \"stock_at_takealot\": [\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 3794,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 8045\n      },\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 8242,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 2755\n      }\n    ],\n    \"stock_on_way\": [\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 1781,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 3956\n      },\n      {\n        \"warehouse\": {\n          \"warehouse_id\": 3753,\n          \"name\": \"string\"\n        },\n        \"quantity_available\": 8308\n      }\n    ],\n    \"total_stock_on_way\": 6558,\n    \"total_stock_cover\": 778,\n    \"catalogue_quality_score\": 1336\n  },\n  \"validation_errors\": [\n    {\n      \"message\": \"string\",\n      \"code\": \"string\"\n    },\n    {\n      \"message\": \"string\",\n      \"code\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "272989e2-d5b2-4526-87c0-8b06000fb298",
+              "name": "Bad Request Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f60a0022-55fa-4afd-abd6-03c6c60c9e30",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc312dc5-bcab-42f0-b7ec-9c146ac4235d",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c2d7e57-b732-435a-8418-6521467c3f57",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c5df7480-550c-4740-9e78-d728ea06d69b",
+      "name": "Create a batch",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6249027c-c61d-4d12-bd5f-292f4c4d23f8",
+          "name": "Create A Batch (v2)",
+          "request": {
+            "name": "Create A Batch (v2)",
+            "description": {
+              "content": "Create or update multiple offers by submitting a batch. Please note there is a 10k size limit - batches larger than this limit will be rejected.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4df3ea97-5915-4450-b9ea-8fe0a1bf94ac",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"batch_id\": \"string\",\n  \"status\": {\n    \"description\": \"string\",\n    \"id\": 3085\n  },\n  \"result\": [\n    {\n      \"validation_errors\": [\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        }\n      ],\n      \"offer\": {\n        \"selling_price\": 3902,\n        \"rrp\": 9305,\n        \"leadtime_days\": 1864,\n        \"leadtime_stock\": [\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 6902,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 9199\n          },\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 6836,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 9839\n          }\n        ],\n        \"stock_at_takealot\": [\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 929,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 121\n          },\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 8136,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 2617\n          }\n        ],\n        \"status\": \"string\",\n        \"sku\": \"string\",\n        \"offer_id\": 5811\n      }\n    },\n    {\n      \"validation_errors\": [\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        }\n      ],\n      \"offer\": {\n        \"selling_price\": 6220,\n        \"rrp\": 1084,\n        \"leadtime_days\": 6364,\n        \"leadtime_stock\": [\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 229,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 9261\n          },\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 9505,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 5491\n          }\n        ],\n        \"stock_at_takealot\": [\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 2324,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 1964\n          },\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 6527,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 9946\n          }\n        ],\n        \"status\": \"string\",\n        \"sku\": \"string\",\n        \"offer_id\": 6671\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b81ce30c-37d0-42f2-bd9b-9cd9f6c66a1b",
+              "name": "Bad Request Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67e06f0e-d33c-4121-9100-d0b13f71da86",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2029b928-24e3-4abc-a743-af4293bad823",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8b9b0ddd-3fcd-43a5-aceb-420273f43d06",
+      "name": "Get a batch",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "60d0a2ba-ab0b-4b42-8525-3c97c81624fb",
+          "name": "Get Batch Information (v2)",
+          "request": {
+            "name": "Get Batch Information (v2)",
+            "description": {
+              "content": "Query the current status of a batch, and view results if they are available",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "batch",
+                ":batch_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "batch_id",
+                  "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fb3ae206-4450-4ac8-a621-78c69a2ed741",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch",
+                    ":batch_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batch_id",
+                      "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"batch_id\": \"string\",\n  \"status\": {\n    \"description\": \"string\",\n    \"id\": 5336\n  },\n  \"result\": [\n    {\n      \"validation_errors\": [\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        }\n      ],\n      \"offer\": {\n        \"selling_price\": 1299,\n        \"rrp\": 8058,\n        \"leadtime_days\": 4264,\n        \"leadtime_stock\": [\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 2877,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 2054\n          },\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 2835,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 7450\n          }\n        ],\n        \"stock_at_takealot\": [\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 9655,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 549\n          },\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 790,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 951\n          }\n        ],\n        \"status\": \"string\",\n        \"sku\": \"string\",\n        \"offer_id\": 9598\n      }\n    },\n    {\n      \"validation_errors\": [\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        }\n      ],\n      \"offer\": {\n        \"selling_price\": 8496,\n        \"rrp\": 1704,\n        \"leadtime_days\": 9838,\n        \"leadtime_stock\": [\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 7935,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 1847\n          },\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 7196,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 4321\n          }\n        ],\n        \"stock_at_takealot\": [\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 9921,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 4502\n          },\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 3869,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 1048\n          }\n        ],\n        \"status\": \"string\",\n        \"sku\": \"string\",\n        \"offer_id\": 284\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f313bbf-981e-4540-b37b-a95def808d98",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch",
+                    ":batch_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batch_id",
+                      "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8f507f5-6224-42d5-9745-b136fc572b64",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch",
+                    ":batch_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batch_id",
+                      "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5ed7318-0ef9-4923-992c-34a07d9772a1",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch",
+                    ":batch_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batch_id",
+                      "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c343311e-4e6d-4980-b536-92d1baa8c820",
+      "name": "Get stock counts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "23a6838b-e831-4c05-8e58-3733d77cde39",
+          "name": "Get Count Of Offers With Stock At Takealot And Unbalanced Stock At Takealot",
+          "request": {
+            "name": "Get Count Of Offers With Stock At Takealot And Unbalanced Stock At Takealot",
+            "description": {
+              "content": "Retrieve the total number of your offers that have stock at Takealot, as well as the number of offers that have an unbalanced stock level at Takealot",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "offers",
+                "stock_counts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be2e5126-9d88-4915-8636-d1d3042a95f7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "offers",
+                    "stock_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 4402\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6051ae7f-b709-402e-af0a-35ac85491128",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "offers",
+                    "stock_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0f8850b-b884-4c6c-a622-7da5c901cedf",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "offers",
+                    "stock_counts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "73558b9f-898e-4b69-ada0-c2c8d4073fb5",
+      "name": "Get stock health",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "37d3e87d-f494-4758-9e42-f70f326ea42f",
+          "name": "Get Various Statistics Regarding Your Stock Health",
+          "request": {
+            "name": "Get Various Statistics Regarding Your Stock Health",
+            "description": {
+              "content": "Retrieve your stock health statistics",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "offers",
+                "stock_health_stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ffcf549-1929-4ade-b37c-2fe2eb1a172e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "offers",
+                    "stock_health_stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"storage_fee_enabled_offer_count\": 6631\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e607cfc-2dbc-498c-be6f-6f12fd73deaa",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "offers",
+                    "stock_health_stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b021e762-bf7a-4c51-8a00-c40b31b342e7",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "offers",
+                    "stock_health_stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1132",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "15cce2d4-cf43-46f5-bade-85ff0bcddcfa",
+      "name": "view sales",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d37789df-dc1c-47bd-b912-76aefd0ba43a",
+          "name": "Retrieve Information About Your Sales On The Takealot Platform",
+          "request": {
+            "name": "Retrieve Information About Your Sales On The Takealot Platform",
+            "description": {
+              "content": "Get sales based on filters passed through",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "sales"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>,<string>",
+                  "description": "A list of search parameters (supported fields are start_date, end_date, sku, product_title, tsin, dc, customer_dc, sale_status, po_number, order_id, promotion) e.g. ?filters=sku:foo;title:bar\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "The page number to retrieve (starting at 1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "The number of sales per page. Limited to 100."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5e067bb-064c-4afe-ba89-9df7601abb69",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page_summary\": {\n    \"page_size\": 3402,\n    \"page_number\": 995,\n    \"total\": 1268\n  },\n  \"sales\": [\n    {\n      \"shipment_id\": 6788,\n      \"shipment_state_id\": 2498,\n      \"po_number\": 8961,\n      \"shipment_name\": \"string\",\n      \"offer_id\": 3000,\n      \"product_title\": \"string\",\n      \"takealot_url_mobi\": \"string\",\n      \"sku\": \"string\",\n      \"tsin\": 8424,\n      \"order_id\": 1444,\n      \"order_item_id\": 511,\n      \"quantity\": 9029,\n      \"selling_price\": 133.7953809846104,\n      \"dc\": \"string\",\n      \"customer_dc\": \"string\",\n      \"order_date\": \"string\",\n      \"sale_status\": true,\n      \"promotion\": false,\n      \"customer\": \"string\",\n      \"stock_source_region\": \"string\"\n    },\n    {\n      \"shipment_id\": 4257,\n      \"shipment_state_id\": 983,\n      \"po_number\": 2699,\n      \"shipment_name\": \"string\",\n      \"offer_id\": 5162,\n      \"product_title\": \"string\",\n      \"takealot_url_mobi\": \"string\",\n      \"sku\": \"string\",\n      \"tsin\": 5649,\n      \"order_id\": 9139,\n      \"order_item_id\": 9898,\n      \"quantity\": 7608,\n      \"selling_price\": 6689.563786778518,\n      \"dc\": \"string\",\n      \"customer_dc\": \"string\",\n      \"order_date\": \"string\",\n      \"sale_status\": false,\n      \"promotion\": false,\n      \"customer\": \"string\",\n      \"stock_source_region\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32560a19-7933-46e4-a15d-ca7b17cc760e",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fields\": \"string\",\n  \"message\": \"string\",\n  \"status\": 485\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4c862a77-62be-4e17-bd74-cf6d91c794aa",
+      "name": "sales summary",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "841c6508-c0a0-420c-9fc0-14bb3a7e8e79",
+          "name": "Retrieve Information About Your Sales Summary Over Various Date Ranges",
+          "request": {
+            "name": "Retrieve Information About Your Sales Summary Over Various Date Ranges",
+            "description": {
+              "content": "Get sales summary",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "sales",
+                "summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56423e55-2095-4e97-b3d1-51ba9a86fac9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sales_summary\": [\n    {\n      \"date_range\": \"string\",\n      \"total\": 2668.144929930387,\n      \"quantity\": 8186\n    },\n    {\n      \"date_range\": \"string\",\n      \"total\": 24.49363129358506,\n      \"quantity\": 3324\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f22d41f8-cd67-4172-bb99-3d4fa76136fc",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fields\": \"string\",\n  \"message\": \"string\",\n  \"status\": 485\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "81c19add-51d3-4693-9f0a-d44933c272bd",
+      "name": "view sales orders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b8a0fa97-877f-429c-8530-4428d0268978",
+          "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+          "request": {
+            "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+            "description": {
+              "content": "Get sales orders based on filters passed through",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "sales",
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<string>",
+                  "description": "(Required) The start date for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<string>",
+                  "description": "(Required) The end date for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "sku",
+                  "value": "<string>",
+                  "description": "The SKU for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_title",
+                  "value": "<string>",
+                  "description": "The product title for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "tsin",
+                  "value": "<integer>",
+                  "description": "The TSIN for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_id",
+                  "value": "<integer>",
+                  "description": "The order ID for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "The page number to retrieve (starting at 1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "The number of sales per page. Limited to 100."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1c1d207-8ac0-4a93-8e89-ce25ea69e444",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tsin",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page_summary\": {\n    \"page_size\": 3402,\n    \"page_number\": 995,\n    \"total\": 1268\n  },\n  \"sales\": [\n    {\n      \"shipment_id\": 6788,\n      \"shipment_state_id\": 2498,\n      \"po_number\": 8961,\n      \"shipment_name\": \"string\",\n      \"offer_id\": 3000,\n      \"product_title\": \"string\",\n      \"takealot_url_mobi\": \"string\",\n      \"sku\": \"string\",\n      \"tsin\": 8424,\n      \"order_id\": 1444,\n      \"order_item_id\": 511,\n      \"quantity\": 9029,\n      \"selling_price\": 133.7953809846104,\n      \"dc\": \"string\",\n      \"customer_dc\": \"string\",\n      \"order_date\": \"string\",\n      \"sale_status\": true,\n      \"promotion\": false,\n      \"customer\": \"string\",\n      \"stock_source_region\": \"string\"\n    },\n    {\n      \"shipment_id\": 4257,\n      \"shipment_state_id\": 983,\n      \"po_number\": 2699,\n      \"shipment_name\": \"string\",\n      \"offer_id\": 5162,\n      \"product_title\": \"string\",\n      \"takealot_url_mobi\": \"string\",\n      \"sku\": \"string\",\n      \"tsin\": 5649,\n      \"order_id\": 9139,\n      \"order_item_id\": 9898,\n      \"quantity\": 7608,\n      \"selling_price\": 6689.563786778518,\n      \"dc\": \"string\",\n      \"customer_dc\": \"string\",\n      \"order_date\": \"string\",\n      \"sale_status\": false,\n      \"promotion\": false,\n      \"customer\": \"string\",\n      \"stock_source_region\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83c840e2-c0de-4000-8c50-da6a62001954",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tsin",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fields\": \"string\",\n  \"message\": \"string\",\n  \"status\": 485\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11903f3e-fc3e-4f27-80c2-19863e4e92a2",
+          "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+          "request": {
+            "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+            "description": {
+              "content": "Get sales orders based on filters passed through",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "sales",
+                "orders",
+                ":order_id",
+                "customer_invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "order_id",
+                  "description": "(Required) The start date for filtering orders"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "428863c5-6604-45bc-84a6-4fc281eb66f3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "orders",
+                    ":order_id",
+                    "customer_invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "order_id",
+                      "description": "(Required) The start date for filtering orders"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"documents\": [\n    {\n      \"document_id\": 5484,\n      \"document_date\": \"string\",\n      \"document_type\": \"string\",\n      \"document_reason\": \"string\",\n      \"file_name\": \"string\",\n      \"downloadable\": false\n    },\n    {\n      \"document_id\": 2278,\n      \"document_date\": \"string\",\n      \"document_type\": \"string\",\n      \"document_reason\": \"string\",\n      \"file_name\": \"string\",\n      \"downloadable\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a49ac2cd-be06-41d8-b60a-698a751aa0be",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "orders",
+                    ":order_id",
+                    "customer_invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "order_id",
+                      "description": "(Required) The start date for filtering orders"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fields\": \"string\",\n  \"message\": \"string\",\n  \"status\": 485\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seller-api.takealot.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8112d1ee-6e59-4f47-b7f0-d6115fa03f62",
+    "name": "Takealot Seller API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the \"try it out\" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.",
+      "type": "text/plain"
+    }
+  }
+}

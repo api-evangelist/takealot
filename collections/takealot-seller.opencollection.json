@@ -1,0 +1,522 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get offers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All Offers (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/offers",
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query",
+                "description": "The page number to retrieve (starting at 1)."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of offers per page. Limited to 100."
+              },
+              {
+                "name": "filters",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "sort_key",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "sort_dir",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "secondary_sort_key",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "secondary_sort_dir",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "is_filtered",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "offer_ids",
+                "value": "",
+                "type": "query",
+                "description": "A list of offer ids to retrieve."
+              }
+            ]
+          },
+          "docs": "Retrieve information about your offers on the Takealot platform"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Get offers count",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Offers Count (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/offers/count",
+            "params": [
+              {
+                "name": "offer_statuses",
+                "value": "",
+                "type": "query",
+                "description": "A list of offer statuses to filter by. Example - ?offer_statuses=Buyable,Not Buyable"
+              }
+            ]
+          },
+          "docs": "Retrieve the total number of your offers on the Takealot platform (optionally filtered by offer status)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Get an offer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/offers/offer/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path",
+                "description": "Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+              }
+            ]
+          },
+          "docs": "Retrieve information about an individual offer by providing an identifier for the offer"
+        },
+        {
+          "info": {
+            "name": "Get An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/offers/offer",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+              }
+            ]
+          },
+          "docs": "Retrieve information about an individual offer by providing an identifier for the offer"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Create an offer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/offers/offer/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path",
+                "description": "The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+              }
+            ]
+          },
+          "docs": "Create an offer by providing the variant's Barcode"
+        },
+        {
+          "info": {
+            "name": "Create An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/offers/offer",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+              }
+            ]
+          },
+          "docs": "Create an offer by providing the variant's Barcode"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Update an offer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/v2/offers/offer/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path",
+                "description": "Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+              }
+            ]
+          },
+          "docs": "Update an offer by providing an identifier for the offer"
+        },
+        {
+          "info": {
+            "name": "Update An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/v2/offers/offer",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+              }
+            ]
+          },
+          "docs": "Update an offer by providing an identifier for the offer"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Create a batch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create A Batch (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/offers/batch"
+          },
+          "docs": "Create or update multiple offers by submitting a batch. Please note there is a 10k size limit - batches larger than this limit will be rejected."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Get a batch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Batch Information (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/offers/batch/:batch_id",
+            "params": [
+              {
+                "name": "batch_id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the batch you have submitted, provided to you by Takealot"
+              }
+            ]
+          },
+          "docs": "Query the current status of a batch, and view results if they are available"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Get stock counts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Count Of Offers With Stock At Takealot And Unbalanced Stock At Takealot",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/offers/stock_counts",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              }
+            ]
+          },
+          "docs": "Retrieve the total number of your offers that have stock at Takealot, as well as the number of offers that have an unbalanced stock level at Takealot"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Get stock health",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Various Statistics Regarding Your Stock Health",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/offers/stock_health_stats",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              }
+            ]
+          },
+          "docs": "Retrieve your stock health statistics"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "view sales",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Information About Your Sales On The Takealot Platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/sales",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              },
+              {
+                "name": "filters",
+                "value": "",
+                "type": "query",
+                "description": "A list of search parameters (supported fields are start_date, end_date, sku, product_title, tsin, dc, customer_dc, sale_status, po_number, order_id, promotion) e.g. ?filters=sku:foo;title:bar\n"
+              },
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query",
+                "description": "The page number to retrieve (starting at 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of sales per page. Limited to 100."
+              }
+            ]
+          },
+          "docs": "Get sales based on filters passed through"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "sales summary",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Information About Your Sales Summary Over Various Date Ranges",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/sales/summary",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              }
+            ]
+          },
+          "docs": "Get sales summary"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "view sales orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/sales/orders",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query",
+                "description": "The start date for filtering orders"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "The end date for filtering orders"
+              },
+              {
+                "name": "sku",
+                "value": "",
+                "type": "query",
+                "description": "The SKU for filtering orders"
+              },
+              {
+                "name": "product_title",
+                "value": "",
+                "type": "query",
+                "description": "The product title for filtering orders"
+              },
+              {
+                "name": "tsin",
+                "value": "",
+                "type": "query",
+                "description": "The TSIN for filtering orders"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query",
+                "description": "The order ID for filtering orders"
+              },
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query",
+                "description": "The page number to retrieve (starting at 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of sales per page. Limited to 100."
+              }
+            ]
+          },
+          "docs": "Get sales orders based on filters passed through"
+        },
+        {
+          "info": {
+            "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/sales/orders/:order_id/customer_invoices",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path",
+                "description": "The start date for filtering orders"
+              }
+            ]
+          },
+          "docs": "Get sales orders based on filters passed through"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
