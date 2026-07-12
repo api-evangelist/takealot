@@ -103,6 +103,10 @@ apis:
       - FN: Takealot Seller Support
         url: https://sellers.takealot.com/
 common:
+  - type: VulnerabilityDisclosure
+    url: security/takealot-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/takealot-domain-security.yml
   - type: Website
     url: https://www.takealot.com
   - type: GroupWebsite
