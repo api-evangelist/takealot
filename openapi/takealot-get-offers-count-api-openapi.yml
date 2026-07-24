@@ -1,0 +1,81 @@
+swagger: '2.0'
+info:
+  title: Takealot Seller Create a batch Get offers count API
+  description: The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the "try it out" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.
+  version: '2.0'
+host: seller-api.takealot.com
+basePath: /
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+- text/csv
+- application/pdf
+- text/html
+tags:
+- name: Get offers count
+paths:
+  /v2/offers/count:
+    get:
+      operationId: get_offers_count_v2
+      description: Retrieve the total number of your offers on the Takealot platform (optionally filtered by offer status)
+      summary: Get Offers Count (v2)
+      parameters:
+      - name: offer_statuses
+        in: query
+        description: A list of offer statuses to filter by. Example - ?offer_statuses=Buyable,Not Buyable
+        type: array
+        items:
+          type: string
+          enum:
+          - Buyable
+          - Not Buyable
+          - Disabled by Seller
+          - Disabled by Takealot
+      tags:
+      - Get offers count
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              count:
+                type: integer
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string

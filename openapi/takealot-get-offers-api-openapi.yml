@@ -1,0 +1,263 @@
+swagger: '2.0'
+info:
+  title: Takealot Seller Create a batch Get offers API
+  description: The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the "try it out" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.
+  version: '2.0'
+host: seller-api.takealot.com
+basePath: /
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+- text/csv
+- application/pdf
+- text/html
+tags:
+- name: Get offers
+paths:
+  /v2/offers:
+    get:
+      operationId: get_offers_v2
+      description: Retrieve information about your offers on the Takealot platform
+      summary: Get All Offers (v2)
+      parameters:
+      - name: page_number
+        in: query
+        type: integer
+        description: The page number to retrieve (starting at 1).
+      - name: page_size
+        in: query
+        type: integer
+        description: The number of offers per page. Limited to 100.
+      - name: filters
+        in: query
+        description: This field has been deprecated. Please do not use it.
+        type: array
+        items:
+          type: string
+      - name: sort_key
+        in: query
+        type: string
+        enum:
+        - offer_id
+        - title
+        - seller_stock
+        - sales_units
+        - stock_cpt
+        - stock_jhb
+        - stock_total
+        - stock_cover_cpt
+        - stock_cover_jhb
+        - selling_price
+        - shipping_min
+        - merchant_warehouse_id
+        - replen_block
+        description: This field has been deprecated. Please do not use it.
+      - name: sort_dir
+        in: query
+        type: string
+        enum:
+        - asc
+        - desc
+        - ASC
+        - DESC
+        description: This field has been deprecated. Please do not use it.
+      - name: secondary_sort_key
+        in: query
+        type: string
+        enum:
+        - title
+        description: This field has been deprecated. Please do not use it.
+      - name: secondary_sort_dir
+        in: query
+        type: string
+        enum:
+        - asc
+        - desc
+        - ASC
+        - DESC
+        description: This field has been deprecated. Please do not use it.
+      - name: is_filtered
+        in: query
+        type: boolean
+        description: This field has been deprecated. Please do not use it.
+      - name: offer_ids
+        in: query
+        type: array
+        items:
+          type: integer
+        description: A list of offer ids to retrieve.
+      tags:
+      - Get offers
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/V2Offers'
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '400':
+          description: Bad Request Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+definitions:
+  V2StockCover:
+    type: object
+    description: please note that 0 means there is no stock and hence no cover. -1 means there have been no sales units in the past 30 days hence stock cover cannot be determined.
+    properties:
+      warehouse_id:
+        type: integer
+      stock_cover_days:
+        type: integer
+  V2SalesUnits:
+    type: object
+    properties:
+      warehouse_id:
+        type: integer
+      sales_units:
+        type: integer
+  V2Offers:
+    type: object
+    properties:
+      total_results:
+        type: integer
+      page_size:
+        type: integer
+      page_number:
+        type: integer
+      offers:
+        type: array
+        items:
+          $ref: '#/definitions/V2Offer'
+  V2Offer:
+    type: object
+    properties:
+      tsin_id:
+        type: integer
+      offer_id:
+        type: integer
+      sku:
+        type: string
+      barcode:
+        type: string
+      product_label_number:
+        type: string
+      selling_price:
+        type: integer
+      rrp:
+        type: integer
+      leadtime_days:
+        type: integer
+      leadtime_stock:
+        type: array
+        items:
+          $ref: '#/definitions/V2OfferLeadtimeStock'
+      status:
+        type: string
+      title:
+        type: string
+      offer_url:
+        type: string
+      stock_cover:
+        type: array
+        items:
+          $ref: '#/definitions/V2StockCover'
+      sales_units:
+        type: array
+        items:
+          $ref: '#/definitions/V2SalesUnits'
+      discount:
+        type: string
+      discount_shown:
+        type: boolean
+      storage_fee_eligible:
+        type: boolean
+      date_created:
+        type: string
+      stock_at_takealot_total:
+        type: integer
+      total_excess_takealot_stock:
+        type: integer
+      stock_at_takealot:
+        type: array
+        items:
+          $ref: '#/definitions/V2OfferWarehouseStock'
+      stock_on_way:
+        type: array
+        items:
+          $ref: '#/definitions/V2OfferWarehouseStock'
+      total_stock_on_way:
+        type: integer
+      total_stock_cover:
+        type: integer
+      catalogue_quality_score:
+        type: integer
+  V2OfferWarehouseStock:
+    type: object
+    properties:
+      warehouse:
+        type: object
+        properties:
+          warehouse_id:
+            type: integer
+          name:
+            type: string
+      quantity_available:
+        type: integer
+  V2OfferLeadtimeStock:
+    type: object
+    properties:
+      merchant_warehouse:
+        type: object
+        properties:
+          warehouse_id:
+            type: integer
+          name:
+            type: string
+      quantity_available:
+        type: integer

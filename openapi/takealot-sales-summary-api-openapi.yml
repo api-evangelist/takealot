@@ -1,0 +1,68 @@
+swagger: '2.0'
+info:
+  title: Takealot Seller Create a batch sales summary API
+  description: The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the "try it out" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.
+  version: '2.0'
+host: seller-api.takealot.com
+basePath: /
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+- text/csv
+- application/pdf
+- text/html
+tags:
+- name: sales summary
+paths:
+  /{version}/sales/summary:
+    get:
+      operationId: get_sales_summary
+      description: Get sales summary
+      summary: Retrieve Information About Your Sales Summary Over Various Date Ranges
+      parameters:
+      - name: version
+        in: path
+        required: true
+        type: string
+        description: The major version of the API, prepended with a v (e.g. v1)
+      tags:
+      - sales summary
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SalesSummaryResponse'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  SaleSummary:
+    type: object
+    properties:
+      date_range:
+        type: string
+      total:
+        type: number
+      quantity:
+        type: integer
+  Error:
+    type: object
+    properties:
+      fields:
+        type: string
+      message:
+        type: string
+      status:
+        format: int32
+        type: integer
+  SalesSummaryResponse:
+    type: object
+    properties:
+      sales_summary:
+        type: array
+        items:
+          $ref: '#/definitions/SaleSummary'

@@ -1,0 +1,75 @@
+swagger: '2.0'
+info:
+  title: Takealot Seller Create a batch Get stock health API
+  description: The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the "try it out" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.
+  version: '2.0'
+host: seller-api.takealot.com
+basePath: /
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+- text/csv
+- application/pdf
+- text/html
+tags:
+- name: Get stock health
+paths:
+  /{version}/offers/stock_health_stats:
+    get:
+      operationId: get_stock_health_stats
+      description: Retrieve your stock health statistics
+      summary: Get Various Statistics Regarding Your Stock Health
+      parameters:
+      - name: version
+        in: path
+        type: string
+        required: true
+        description: The major version of the API, prepended with a v (e.g. v1)
+      tags:
+      - Get stock health
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              storage_fee_enabled_offer_count:
+                type: integer
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '403':
+          description: Forbidden Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
+        '500':
+          description: Server Error
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          headers:
+            x-RateLimit-Limit:
+              type: integer
+            x-RateLimit-Remaining:
+              type: integer
+            x-RateLimit-Reset:
+              type: string
