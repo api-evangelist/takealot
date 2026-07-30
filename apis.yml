@@ -31,9 +31,20 @@ description: >-
   Flowgear, OrderEazi, and similar) and is the canonical artifact to profile
   for any Takealot capability work.
 type: Index
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/takealot.png
 tags:
   - Commerce
   - E-Commerce
@@ -56,52 +67,270 @@ created: '2026-05-24'
 modified: '2026-05-24'
 specificationVersion: '0.20'
 apis:
-  - aid: takealot:seller-api
-    name: Takealot Seller API
-    description: >-
-      The Takealot Seller API is the public REST API that Takealot Marketplace
-      sellers use to manage their offers, monitor stock health, and pull sales
-      and order data on Takealot.com. It exposes offer CRUD by SKU / barcode /
-      offer-id (single and batch of up to 10,000 items), batch-status polling,
-      stock-count and stock-health-stats diagnostics tied to Takealot's
-      storage-fee policy, and sales / sales-summary / sales-orders /
-      customer-invoices reporting. Authentication is by per-seller API key
-      (Authorization header) minted from the Seller Portal at
-      https://seller.takealot.com/api/seller-api; the API is described as a
-      Swagger 2.0 specification at https://seller-api.takealot.com/api-docs/
-      with the canonical document at
-      https://seller-api.takealot.com/api-docs/swagger.json. Responses are
-      returned as application/json, text/csv, application/pdf, or text/html
-      depending on the operation, and every response carries the standard
-      x-RateLimit-Limit / x-RateLimit-Remaining / x-RateLimit-Reset headers.
-    humanURL: https://seller-api.takealot.com/api-docs/
-    baseURL: https://seller-api.takealot.com
-    tags:
-      - Marketplace
-      - Sellers
-      - Offers
-      - Stock
-      - Sales
-      - Orders
-      - Invoices
-    properties:
-      - type: Documentation
-        url: https://seller-api.takealot.com/api-docs/
-      - type: OpenAPI
-        url: openapi/takealot-seller-openapi.yml
-      - type: Swagger
-        url: https://seller-api.takealot.com/api-docs/swagger.json
-      - type: SellerPortal
-        url: https://sellers.takealot.com/
-      - type: APIKeyManagement
-        url: https://seller.takealot.com/api/seller-api
-      - type: Authentication
-        url: https://seller-api.takealot.com/api-docs/
-      - type: RateLimits
-        url: https://seller-api.takealot.com/api-docs/
-    contact:
-      - FN: Takealot Seller Support
-        url: https://sellers.takealot.com/
+- aid: takealot:takealot-create-a-batch-api
+  name: Takealot Create a batch API
+  description: The Create a batch API from Takealot — 1 operation(s) for create a batch.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - Create a batch
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-create-a-batch-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-create-an-offer-api
+  name: Takealot Create an offer API
+  description: The Create an offer API from Takealot — 2 operation(s) for create an offer.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - Create an offer
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-create-an-offer-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-get-a-batch-api
+  name: Takealot Get a batch API
+  description: The Get a batch API from Takealot — 1 operation(s) for get a batch.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - Get a batch
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-get-a-batch-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-get-an-offer-api
+  name: Takealot Get an offer API
+  description: The Get an offer API from Takealot — 2 operation(s) for get an offer.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - Get an offer
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-get-an-offer-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-get-offers-api
+  name: Takealot Get offers API
+  description: The Get offers API from Takealot — 1 operation(s) for get offers.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - Get offers
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-get-offers-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-get-offers-count-api
+  name: Takealot Get offers count API
+  description: The Get offers count API from Takealot — 1 operation(s) for get offers count.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - Get offers count
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-get-offers-count-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-get-stock-counts-api
+  name: Takealot Get stock counts API
+  description: The Get stock counts API from Takealot — 1 operation(s) for get stock counts.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - Get stock counts
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-get-stock-counts-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-get-stock-health-api
+  name: Takealot Get stock health API
+  description: The Get stock health API from Takealot — 1 operation(s) for get stock health.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - Get stock health
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-get-stock-health-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-sales-summary-api
+  name: Takealot sales summary API
+  description: The sales summary API from Takealot — 1 operation(s) for sales summary.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - sales summary
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-sales-summary-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-update-an-offer-api
+  name: Takealot Update an offer API
+  description: The Update an offer API from Takealot — 2 operation(s) for update an offer.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - Update an offer
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-update-an-offer-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-view-sales-api
+  name: Takealot view sales API
+  description: The view sales API from Takealot — 1 operation(s) for view sales.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - view sales
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-view-sales-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
+- aid: takealot:takealot-view-sales-orders-api
+  name: Takealot view sales orders API
+  description: The view sales orders API from Takealot — 2 operation(s) for view sales orders.
+  humanURL: https://seller-api.takealot.com/api-docs/
+  baseURL: https://seller-api.takealot.com
+  tags:
+  - view sales orders
+  properties:
+  - type: OpenAPI
+    url: openapi/takealot-view-sales-orders-api-openapi.yml
+  - type: Documentation
+    url: https://seller-api.takealot.com/api-docs/
+  - type: Swagger
+    url: https://seller-api.takealot.com/api-docs/swagger.json
+  - type: SellerPortal
+    url: https://sellers.takealot.com/
+  - type: APIKeyManagement
+    url: https://seller.takealot.com/api/seller-api
+  - type: Authentication
+    url: https://seller-api.takealot.com/api-docs/
+  - type: RateLimits
+    url: https://seller-api.takealot.com/api-docs/
 common:
   - type: AgenticAccess
     url: agentic-access/takealot-agentic-access.yml
