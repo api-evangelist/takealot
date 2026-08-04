@@ -1,0 +1,36 @@
+{
+  "provider": "takealot",
+  "sources": [
+    "takealot-create-a-batch-api-openapi.yml",
+    "takealot-create-an-offer-api-openapi.yml",
+    "takealot-get-a-batch-api-openapi.yml",
+    "takealot-get-an-offer-api-openapi.yml",
+    "takealot-get-offers-api-openapi.yml",
+    "takealot-get-offers-count-api-openapi.yml",
+    "takealot-get-stock-counts-api-openapi.yml",
+    "takealot-get-stock-health-api-openapi.yml",
+    "takealot-sales-summary-api-openapi.yml",
+    "takealot-update-an-offer-api-openapi.yml",
+    "takealot-view-sales-api-openapi.yml",
+    "takealot-view-sales-orders-api-openapi.yml"
+  ],
+  "outputs": [
+    "takealot-create-a-batch-api-openapi.yml",
+    "takealot-create-an-offer-api-openapi.yml",
+    "takealot-get-a-batch-api-openapi.yml",
+    "takealot-get-an-offer-api-openapi.yml",
+    "takealot-get-offers-api-openapi.yml",
+    "takealot-get-offers-count-api-openapi.yml",
+    "takealot-get-stock-counts-api-openapi.yml",
+    "takealot-get-stock-health-api-openapi.yml",
+    "takealot-sales-summary-api-openapi.yml",
+    "takealot-update-an-offer-api-openapi.yml",
+    "takealot-view-sales-api-openapi.yml",
+    "takealot-view-sales-orders-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
