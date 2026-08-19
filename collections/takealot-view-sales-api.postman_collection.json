@@ -1,0 +1,209 @@
+{
+  "item": [
+    {
+      "id": "6a6c8b83-90fe-45d7-95d5-a6763533afbe",
+      "name": "view sales",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "16f91107-cbca-43dc-a412-b9a29fa09a83",
+          "name": "Retrieve Information About Your Sales On The Takealot Platform",
+          "request": {
+            "name": "Retrieve Information About Your Sales On The Takealot Platform",
+            "description": {
+              "content": "Get sales based on filters passed through",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "sales"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>,<string>",
+                  "description": "A list of search parameters (supported fields are start_date, end_date, sku, product_title, tsin, dc, customer_dc, sale_status, po_number, order_id, promotion) e.g. ?filters=sku:foo;title:bar\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "The page number to retrieve (starting at 1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "The number of sales per page. Limited to 100."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ebdd5f58-14fe-4fb1-9ece-db1e29c01dff",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page_summary\": {\n    \"page_size\": 3400,\n    \"page_number\": 4946,\n    \"total\": 7998\n  },\n  \"sales\": [\n    {\n      \"shipment_id\": 4348,\n      \"shipment_state_id\": 4049,\n      \"po_number\": 2292,\n      \"shipment_name\": \"string\",\n      \"offer_id\": 2779,\n      \"product_title\": \"string\",\n      \"takealot_url_mobi\": \"string\",\n      \"sku\": \"string\",\n      \"tsin\": 7797,\n      \"order_id\": 5535,\n      \"order_item_id\": 2972,\n      \"quantity\": 7465,\n      \"selling_price\": 9832.132774144511,\n      \"dc\": \"string\",\n      \"customer_dc\": \"string\",\n      \"order_date\": \"string\",\n      \"sale_status\": true,\n      \"promotion\": true,\n      \"customer\": \"string\",\n      \"stock_source_region\": \"string\"\n    },\n    {\n      \"shipment_id\": 4153,\n      \"shipment_state_id\": 6993,\n      \"po_number\": 5926,\n      \"shipment_name\": \"string\",\n      \"offer_id\": 4753,\n      \"product_title\": \"string\",\n      \"takealot_url_mobi\": \"string\",\n      \"sku\": \"string\",\n      \"tsin\": 9293,\n      \"order_id\": 7165,\n      \"order_item_id\": 9606,\n      \"quantity\": 7456,\n      \"selling_price\": 5545.690761704252,\n      \"dc\": \"string\",\n      \"customer_dc\": \"string\",\n      \"order_date\": \"string\",\n      \"sale_status\": false,\n      \"promotion\": true,\n      \"customer\": \"string\",\n      \"stock_source_region\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11b38371-607e-4067-acd6-68c9b85048a3",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filters",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fields\": \"string\",\n  \"message\": \"string\",\n  \"status\": 5707\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seller-api.takealot.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "38fb45f4-409e-4bcf-8c0a-490f4a6d0d07",
+    "name": "Takealot Seller Create a batch view sales API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the \"try it out\" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.",
+      "type": "text/plain"
+    }
+  }
+}

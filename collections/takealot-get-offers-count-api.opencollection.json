@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch Get offers count API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get offers count",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Offers Count (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/offers/count",
+            "params": [
+              {
+                "name": "offer_statuses",
+                "value": "",
+                "type": "query",
+                "description": "A list of offer statuses to filter by. Example - ?offer_statuses=Buyable,Not Buyable"
+              }
+            ]
+          },
+          "docs": "Retrieve the total number of your offers on the Takealot platform (optionally filtered by offer status)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

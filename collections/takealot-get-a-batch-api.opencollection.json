@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch Get a batch API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get a batch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Batch Information (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/offers/batch/:batch_id",
+            "params": [
+              {
+                "name": "batch_id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the batch you have submitted, provided to you by Takealot"
+              }
+            ]
+          },
+          "docs": "Query the current status of a batch, and view results if they are available"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

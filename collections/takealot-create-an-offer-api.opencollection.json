@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch Create an offer API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Create an offer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/offers/offer/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path",
+                "description": "The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+              }
+            ]
+          },
+          "docs": "Create an offer by providing the variant's Barcode"
+        },
+        {
+          "info": {
+            "name": "Create An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/offers/offer",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "The Barcode for the variant to create an offer against. It is not required to prepend BARCODE."
+              }
+            ]
+          },
+          "docs": "Create an offer by providing the variant's Barcode"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

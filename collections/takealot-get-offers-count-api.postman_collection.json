@@ -1,0 +1,256 @@
+{
+  "item": [
+    {
+      "id": "fad26625-03c9-4b5c-9243-a6e70621a3d9",
+      "name": "Get offers count",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "00adf0c6-842c-4d5e-91c7-74337e819380",
+          "name": "Get Offers Count (v2)",
+          "request": {
+            "name": "Get Offers Count (v2)",
+            "description": {
+              "content": "Retrieve the total number of your offers on the Takealot platform (optionally filtered by offer status)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offer_statuses",
+                  "value": "<string>,<string>",
+                  "description": "A list of offer statuses to filter by. Example - ?offer_statuses=Buyable,Not Buyable"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dcb90499-ede9-4139-8fb2-b3a3c48e0dcc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offer_statuses",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "7414",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "7414",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 2718\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5de94b0c-05cd-4dd7-a35c-2d07f1829974",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offer_statuses",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "7414",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "7414",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a98d6163-d00b-49d2-af30-31ea6336fe5b",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offer_statuses",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "7414",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "7414",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seller-api.takealot.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8f0d1b30-d962-47bc-87f4-9ac681783f55",
+    "name": "Takealot Seller Create a batch Get offers count API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the \"try it out\" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch view sales orders API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "view sales orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/sales/orders",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query",
+                "description": "The start date for filtering orders"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query",
+                "description": "The end date for filtering orders"
+              },
+              {
+                "name": "sku",
+                "value": "",
+                "type": "query",
+                "description": "The SKU for filtering orders"
+              },
+              {
+                "name": "product_title",
+                "value": "",
+                "type": "query",
+                "description": "The product title for filtering orders"
+              },
+              {
+                "name": "tsin",
+                "value": "",
+                "type": "query",
+                "description": "The TSIN for filtering orders"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query",
+                "description": "The order ID for filtering orders"
+              },
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query",
+                "description": "The page number to retrieve (starting at 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of sales per page. Limited to 100."
+              }
+            ]
+          },
+          "docs": "Get sales orders based on filters passed through"
+        },
+        {
+          "info": {
+            "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/sales/orders/:order_id/customer_invoices",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path",
+                "description": "The start date for filtering orders"
+              }
+            ]
+          },
+          "docs": "Get sales orders based on filters passed through"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

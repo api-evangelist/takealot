@@ -1,0 +1,266 @@
+{
+  "item": [
+    {
+      "id": "0763bb04-0835-4f50-a950-f7cd5a23f5d4",
+      "name": "Get stock health",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9dec48cc-a507-4fda-9edd-c19ba8916a05",
+          "name": "Get Various Statistics Regarding Your Stock Health",
+          "request": {
+            "name": "Get Various Statistics Regarding Your Stock Health",
+            "description": {
+              "content": "Retrieve your stock health statistics",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "offers",
+                "stock_health_stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b5c59c11-45df-44ef-8939-c4fa9c6aae80",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "offers",
+                    "stock_health_stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "2029",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "2029",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"storage_fee_enabled_offer_count\": 1843\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4bf324bc-b59b-4adc-a73c-d4f962a27ad3",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "offers",
+                    "stock_health_stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "2029",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "2029",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4429dc3e-9f80-41ef-84f1-27967e66d7af",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "offers",
+                    "stock_health_stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "2029",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "2029",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seller-api.takealot.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "07a00fc4-4df4-4445-84e7-64253364bf47",
+    "name": "Takealot Seller Create a batch Get stock health API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the \"try it out\" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.",
+      "type": "text/plain"
+    }
+  }
+}

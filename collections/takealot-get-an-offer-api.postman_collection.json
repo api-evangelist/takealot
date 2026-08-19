@@ -1,0 +1,618 @@
+{
+  "item": [
+    {
+      "id": "f611610a-6014-43be-9d70-d076e5fcda7a",
+      "name": "Get an offer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3d8ea96f-4934-4b65-ac20-9233fd521493",
+          "name": "Get An Offer (v2)",
+          "request": {
+            "name": "Get An Offer (v2)",
+            "description": {
+              "content": "Retrieve information about an individual offer by providing an identifier for the offer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "offer",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8103e38a-c6cd-4b79-9ae4-b15f1126303f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tsin_id\": 4317,\n  \"offer_id\": 2045,\n  \"sku\": \"string\",\n  \"barcode\": \"string\",\n  \"product_label_number\": \"string\",\n  \"selling_price\": 5775,\n  \"rrp\": 4418,\n  \"leadtime_days\": 7724,\n  \"leadtime_stock\": [\n    {\n      \"merchant_warehouse\": {\n        \"warehouse_id\": 2673,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 9473\n    },\n    {\n      \"merchant_warehouse\": {\n        \"warehouse_id\": 2882,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 9554\n    }\n  ],\n  \"status\": \"string\",\n  \"title\": \"string\",\n  \"offer_url\": \"string\",\n  \"stock_cover\": [\n    {\n      \"warehouse_id\": 7554,\n      \"stock_cover_days\": 6075\n    },\n    {\n      \"warehouse_id\": 380,\n      \"stock_cover_days\": 4434\n    }\n  ],\n  \"sales_units\": [\n    {\n      \"warehouse_id\": 3729,\n      \"sales_units\": 9131\n    },\n    {\n      \"warehouse_id\": 5532,\n      \"sales_units\": 9725\n    }\n  ],\n  \"discount\": \"string\",\n  \"discount_shown\": true,\n  \"storage_fee_eligible\": false,\n  \"date_created\": \"string\",\n  \"stock_at_takealot_total\": 5957,\n  \"total_excess_takealot_stock\": 3608,\n  \"stock_at_takealot\": [\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 6396,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 5492\n    },\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 2785,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 5792\n    }\n  ],\n  \"stock_on_way\": [\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 7739,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 9123\n    },\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 5575,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 6677\n    }\n  ],\n  \"total_stock_on_way\": 1304,\n  \"total_stock_cover\": 4134,\n  \"catalogue_quality_score\": 5956\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a9190115-de49-4172-aa15-3b1d01e546d7",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3181c04-e383-44b6-a99d-927ad07fbb9c",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "38414154-2c81-4f8d-9a06-9bc9bdf2c2a3",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f50a5d66-bb2c-46d9-badc-962633f74bf5",
+          "name": "Get An Offer (v2)",
+          "request": {
+            "name": "Get An Offer (v2)",
+            "description": {
+              "content": "Retrieve information about an individual offer by providing an identifier for the offer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "offer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, Barcode, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e14b746d-72cd-45ae-9266-b31841468435",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tsin_id\": 1087,\n  \"offer_id\": 7155,\n  \"sku\": \"string\",\n  \"barcode\": \"string\",\n  \"product_label_number\": \"string\",\n  \"selling_price\": 7906,\n  \"rrp\": 2976,\n  \"leadtime_days\": 8115,\n  \"leadtime_stock\": [\n    {\n      \"merchant_warehouse\": {\n        \"warehouse_id\": 1178,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 5936\n    },\n    {\n      \"merchant_warehouse\": {\n        \"warehouse_id\": 6327,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 3731\n    }\n  ],\n  \"status\": \"string\",\n  \"title\": \"string\",\n  \"offer_url\": \"string\",\n  \"stock_cover\": [\n    {\n      \"warehouse_id\": 3151,\n      \"stock_cover_days\": 7661\n    },\n    {\n      \"warehouse_id\": 1322,\n      \"stock_cover_days\": 8656\n    }\n  ],\n  \"sales_units\": [\n    {\n      \"warehouse_id\": 9463,\n      \"sales_units\": 2093\n    },\n    {\n      \"warehouse_id\": 6779,\n      \"sales_units\": 9937\n    }\n  ],\n  \"discount\": \"string\",\n  \"discount_shown\": true,\n  \"storage_fee_eligible\": true,\n  \"date_created\": \"string\",\n  \"stock_at_takealot_total\": 3968,\n  \"total_excess_takealot_stock\": 155,\n  \"stock_at_takealot\": [\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 3620,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 4312\n    },\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 2,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 7210\n    }\n  ],\n  \"stock_on_way\": [\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 3111,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 9245\n    },\n    {\n      \"warehouse\": {\n        \"warehouse_id\": 9967,\n        \"name\": \"string\"\n      },\n      \"quantity_available\": 4224\n    }\n  ],\n  \"total_stock_on_way\": 9896,\n  \"total_stock_cover\": 8602,\n  \"catalogue_quality_score\": 7377\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a896e8b-0e45-4dbd-b565-8260412aab35",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d98ca7c0-bada-4323-82d7-3d4ae79d2693",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "497f7b9a-225b-4c25-a1c7-91add6c0df03",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "offer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1624",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seller-api.takealot.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5923e65e-8991-4b45-8faa-d65d75c808f3",
+    "name": "Takealot Seller Create a batch Get an offer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the \"try it out\" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.",
+      "type": "text/plain"
+    }
+  }
+}

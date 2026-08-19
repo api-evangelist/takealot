@@ -1,0 +1,85 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch Get offers API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get offers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All Offers (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/v2/offers",
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query",
+                "description": "The page number to retrieve (starting at 1)."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of offers per page. Limited to 100."
+              },
+              {
+                "name": "filters",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "sort_key",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "sort_dir",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "secondary_sort_key",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "secondary_sort_dir",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "is_filtered",
+                "value": "",
+                "type": "query",
+                "description": "This field has been deprecated. Please do not use it."
+              },
+              {
+                "name": "offer_ids",
+                "value": "",
+                "type": "query",
+                "description": "A list of offer ids to retrieve."
+              }
+            ]
+          },
+          "docs": "Retrieve information about your offers on the Takealot platform"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

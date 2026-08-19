@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch view sales API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "view sales",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Information About Your Sales On The Takealot Platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/sales",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              },
+              {
+                "name": "filters",
+                "value": "",
+                "type": "query",
+                "description": "A list of search parameters (supported fields are start_date, end_date, sku, product_title, tsin, dc, customer_dc, sale_status, po_number, order_id, promotion) e.g. ?filters=sku:foo;title:bar\n"
+              },
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query",
+                "description": "The page number to retrieve (starting at 1)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of sales per page. Limited to 100."
+              }
+            ]
+          },
+          "docs": "Get sales based on filters passed through"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

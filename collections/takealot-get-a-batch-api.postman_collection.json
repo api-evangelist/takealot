@@ -1,0 +1,334 @@
+{
+  "item": [
+    {
+      "id": "6b2545a7-acff-4492-b8e1-ed9a39a24881",
+      "name": "Get a batch",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "223c29de-1e1b-4c80-9de1-e324cb0019e1",
+          "name": "Get Batch Information (v2)",
+          "request": {
+            "name": "Get Batch Information (v2)",
+            "description": {
+              "content": "Query the current status of a batch, and view results if they are available",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "batch",
+                ":batch_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "batch_id",
+                  "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e72888ec-58b1-4a39-bc47-6529f9332f17",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch",
+                    ":batch_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batch_id",
+                      "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1404",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1404",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"batch_id\": \"string\",\n  \"status\": {\n    \"description\": \"string\",\n    \"id\": 2372\n  },\n  \"result\": [\n    {\n      \"validation_errors\": [\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        }\n      ],\n      \"offer\": {\n        \"selling_price\": 5573,\n        \"rrp\": 6504,\n        \"leadtime_days\": 1741,\n        \"leadtime_stock\": [\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 4275,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 8690\n          },\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 9912,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 1038\n          }\n        ],\n        \"stock_at_takealot\": [\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 1531,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 8074\n          },\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 5250,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 7926\n          }\n        ],\n        \"status\": \"string\",\n        \"sku\": \"string\",\n        \"offer_id\": 8627\n      }\n    },\n    {\n      \"validation_errors\": [\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        }\n      ],\n      \"offer\": {\n        \"selling_price\": 9947,\n        \"rrp\": 6738,\n        \"leadtime_days\": 602,\n        \"leadtime_stock\": [\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 6176,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 9192\n          },\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 5258,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 9788\n          }\n        ],\n        \"stock_at_takealot\": [\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 2661,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 3740\n          },\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 691,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 3914\n          }\n        ],\n        \"status\": \"string\",\n        \"sku\": \"string\",\n        \"offer_id\": 5337\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c585b1dc-40f8-4e2e-a192-10147435494a",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch",
+                    ":batch_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batch_id",
+                      "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1404",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1404",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f96504b5-fb87-443c-babb-2eeabf739fd0",
+              "name": "Not Found Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch",
+                    ":batch_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batch_id",
+                      "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1404",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1404",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b443c9e2-f613-46f7-91fe-f53839039d5d",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch",
+                    ":batch_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "batch_id",
+                      "description": "(Required) The ID of the batch you have submitted, provided to you by Takealot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "1404",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "1404",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seller-api.takealot.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b7af1e24-1fc0-4b00-8721-99dee0dbf40b",
+    "name": "Takealot Seller Create a batch Get a batch API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the \"try it out\" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.",
+      "type": "text/plain"
+    }
+  }
+}

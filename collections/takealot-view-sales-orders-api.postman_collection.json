@@ -1,0 +1,444 @@
+{
+  "item": [
+    {
+      "id": "98c7c069-6a30-4ffd-8f3e-ea6e5351f2a6",
+      "name": "view sales orders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6b5378e9-40a0-480b-963e-f8bcac243e36",
+          "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+          "request": {
+            "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+            "description": {
+              "content": "Get sales orders based on filters passed through",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "sales",
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<string>",
+                  "description": "(Required) The start date for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<string>",
+                  "description": "(Required) The end date for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "sku",
+                  "value": "<string>",
+                  "description": "The SKU for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_title",
+                  "value": "<string>",
+                  "description": "The product title for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "tsin",
+                  "value": "<integer>",
+                  "description": "The TSIN for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_id",
+                  "value": "<integer>",
+                  "description": "The order ID for filtering orders"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "The page number to retrieve (starting at 1)"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "The number of sales per page. Limited to 100."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bf0912e8-8786-4e88-825e-94c83e50fce6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tsin",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page_summary\": {\n    \"page_size\": 8649,\n    \"page_number\": 759,\n    \"total\": 5465\n  },\n  \"sales\": [\n    {\n      \"shipment_id\": 4694,\n      \"shipment_state_id\": 8485,\n      \"po_number\": 9331,\n      \"shipment_name\": \"string\",\n      \"offer_id\": 9713,\n      \"product_title\": \"string\",\n      \"takealot_url_mobi\": \"string\",\n      \"sku\": \"string\",\n      \"tsin\": 583,\n      \"order_id\": 7913,\n      \"order_item_id\": 8756,\n      \"quantity\": 7816,\n      \"selling_price\": 5966.415779860839,\n      \"dc\": \"string\",\n      \"customer_dc\": \"string\",\n      \"order_date\": \"string\",\n      \"sale_status\": true,\n      \"promotion\": true,\n      \"customer\": \"string\",\n      \"stock_source_region\": \"string\"\n    },\n    {\n      \"shipment_id\": 8591,\n      \"shipment_state_id\": 8581,\n      \"po_number\": 9242,\n      \"shipment_name\": \"string\",\n      \"offer_id\": 806,\n      \"product_title\": \"string\",\n      \"takealot_url_mobi\": \"string\",\n      \"sku\": \"string\",\n      \"tsin\": 3430,\n      \"order_id\": 3422,\n      \"order_item_id\": 9964,\n      \"quantity\": 6361,\n      \"selling_price\": 1067.612034993557,\n      \"dc\": \"string\",\n      \"customer_dc\": \"string\",\n      \"order_date\": \"string\",\n      \"sale_status\": true,\n      \"promotion\": true,\n      \"customer\": \"string\",\n      \"stock_source_region\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e897ab93-aeeb-4a19-873c-915ee58a3a5d",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sku",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tsin",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fields\": \"string\",\n  \"message\": \"string\",\n  \"status\": 7742\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b276b741-cda6-4513-b0fe-acd3e554fd82",
+          "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+          "request": {
+            "name": "Retrieve Information About Your Sales Orders On The Takealot Platform",
+            "description": {
+              "content": "Get sales orders based on filters passed through",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":version",
+                "sales",
+                "orders",
+                ":order_id",
+                "customer_invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "version",
+                  "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "order_id",
+                  "description": "(Required) The start date for filtering orders"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "39f5f40c-5c99-4547-a18b-a26e51127503",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "orders",
+                    ":order_id",
+                    "customer_invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "order_id",
+                      "description": "(Required) The start date for filtering orders"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"documents\": [\n    {\n      \"document_id\": 7495,\n      \"document_date\": \"string\",\n      \"document_type\": \"string\",\n      \"document_reason\": \"string\",\n      \"file_name\": \"string\",\n      \"downloadable\": true\n    },\n    {\n      \"document_id\": 6986,\n      \"document_date\": \"string\",\n      \"document_type\": \"string\",\n      \"document_reason\": \"string\",\n      \"file_name\": \"string\",\n      \"downloadable\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "895f9efe-5fb9-424e-90fc-2378f17e974f",
+              "name": "Unexpected error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":version",
+                    "sales",
+                    "orders",
+                    ":order_id",
+                    "customer_invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "version",
+                      "description": "(Required) The major version of the API, prepended with a v (e.g. v1)"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "order_id",
+                      "description": "(Required) The start date for filtering orders"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fields\": \"string\",\n  \"message\": \"string\",\n  \"status\": 7742\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seller-api.takealot.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7658b722-c10b-48a1-86a9-c563f00ffcdf",
+    "name": "Takealot Seller Create a batch view sales orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the \"try it out\" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.",
+      "type": "text/plain"
+    }
+  }
+}

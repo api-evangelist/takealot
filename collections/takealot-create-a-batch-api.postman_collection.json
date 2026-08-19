@@ -1,0 +1,334 @@
+{
+  "item": [
+    {
+      "id": "9f848668-c41f-4c48-93b3-4f00abf75a87",
+      "name": "Create a batch",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "73bf7ad4-b7a8-4237-bcb7-40ed5c005707",
+          "name": "Create A Batch (v2)",
+          "request": {
+            "name": "Create A Batch (v2)",
+            "description": {
+              "content": "Create or update multiple offers by submitting a batch. Please note there is a 10k size limit - batches larger than this limit will be rejected.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "offers",
+                "batch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dba40d06-61fe-4ff2-9ed2-6cfb0e1aa2d5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "7089",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "7089",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"batch_id\": \"string\",\n  \"status\": {\n    \"description\": \"string\",\n    \"id\": 6181\n  },\n  \"result\": [\n    {\n      \"validation_errors\": [\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        }\n      ],\n      \"offer\": {\n        \"selling_price\": 1147,\n        \"rrp\": 4153,\n        \"leadtime_days\": 2441,\n        \"leadtime_stock\": [\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 9176,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 4874\n          },\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 9103,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 3644\n          }\n        ],\n        \"stock_at_takealot\": [\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 9359,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 2609\n          },\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 2292,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 3947\n          }\n        ],\n        \"status\": \"string\",\n        \"sku\": \"string\",\n        \"offer_id\": 292\n      }\n    },\n    {\n      \"validation_errors\": [\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        },\n        {\n          \"message\": \"string\",\n          \"code\": \"string\"\n        }\n      ],\n      \"offer\": {\n        \"selling_price\": 4059,\n        \"rrp\": 2353,\n        \"leadtime_days\": 2270,\n        \"leadtime_stock\": [\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 3515,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 1055\n          },\n          {\n            \"merchant_warehouse\": {\n              \"warehouse_id\": 9818,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 2481\n          }\n        ],\n        \"stock_at_takealot\": [\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 878,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 6234\n          },\n          {\n            \"warehouse\": {\n              \"warehouse_id\": 2866,\n              \"name\": \"string\"\n            },\n            \"quantity_available\": 1007\n          }\n        ],\n        \"status\": \"string\",\n        \"sku\": \"string\",\n        \"offer_id\": 8820\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d13238b8-9083-4804-b2d8-431a6a5d5950",
+              "name": "Bad Request Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "7089",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "7089",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9cda9f8f-7792-4328-98ab-219581dfbe87",
+              "name": "Forbidden Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "7089",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "7089",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4986eee3-8db6-4927-8b35-e0c45c3b193a",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "offers",
+                    "batch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  },\n  {\n    \"offer_id\": \"<integer>\",\n    \"sku\": \"<string>\",\n    \"barcode\": \"<string>\",\n    \"selling_price\": \"<integer>\",\n    \"rrp\": \"<integer>\",\n    \"leadtime_days\": \"<integer>\",\n    \"leadtime_stock\": [\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      },\n      {\n        \"merchant_warehouse_id\": \"<integer>\",\n        \"quantity\": \"<integer>\"\n      }\n    ],\n    \"status_action\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Limit",
+                  "value": "7089",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Remaining",
+                  "value": "7089",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-RateLimit-Reset",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seller-api.takealot.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "164d153e-c639-4373-9e4e-45fcebf5e8a8",
+    "name": "Takealot Seller Create a batch API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the \"try it out\" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.",
+      "type": "text/plain"
+    }
+  }
+}

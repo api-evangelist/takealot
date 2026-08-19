@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Create a batch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create A Batch (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/v2/offers/batch"
+          },
+          "docs": "Create or update multiple offers by submitting a batch. Please note there is a 10k size limit - batches larger than this limit will be rejected."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

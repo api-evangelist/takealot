@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch Get stock counts API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get stock counts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Count Of Offers With Stock At Takealot And Unbalanced Stock At Takealot",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/offers/stock_counts",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              }
+            ]
+          },
+          "docs": "Retrieve the total number of your offers that have stock at Takealot, as well as the number of offers that have an unbalanced stock level at Takealot"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

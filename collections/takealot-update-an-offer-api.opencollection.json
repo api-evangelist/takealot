@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch Update an offer API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Update an offer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/v2/offers/offer/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path",
+                "description": "Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+              }
+            ]
+          },
+          "docs": "Update an offer by providing an identifier for the offer"
+        },
+        {
+          "info": {
+            "name": "Update An Offer (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/v2/offers/offer",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query",
+                "description": "Either Takealot's Offer ID, the Barcode or your SKU for the offer. Prepend with ID, BARCODE, or SKU. e.g. ID234, BARCODE3223, SKUDF22. Defaults to Offer ID."
+              }
+            ]
+          },
+          "docs": "Update an offer by providing an identifier for the offer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

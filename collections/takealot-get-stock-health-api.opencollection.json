@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Takealot Seller Create a batch Get stock health API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get stock health",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Various Statistics Regarding Your Stock Health",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:version/offers/stock_health_stats",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "The major version of the API, prepended with a v (e.g. v1)"
+              }
+            ]
+          },
+          "docs": "Retrieve your stock health statistics"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
