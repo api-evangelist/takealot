@@ -65,7 +65,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/takealot/refs/heads/main/apis.yml
 created: '2026-05-24'
 modified: '2026-05-24'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: takealot:takealot-create-a-batch-api
   name: Takealot Create a batch API
