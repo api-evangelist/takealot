@@ -360,6 +360,9 @@ apis:
   - type: RateLimits
     url: https://seller-api.takealot.com/api-docs/
 common:
+  - type: CapabilityMap
+    url: capabilities/takealot-capability-edges.yml
+    name: Takealot Business Capability Map
   - type: AgenticAccess
     url: agentic-access/takealot-agentic-access.yml
   - type: VulnerabilityDisclosure

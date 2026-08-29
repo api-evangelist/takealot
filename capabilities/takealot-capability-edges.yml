@@ -1,0 +1,56 @@
+slug: takealot
+provider: Takealot
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Retail & Consumer Goods
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Create an offer
+  spec_file: takealot-create-an-offer-api-openapi.yml
+  capability_id: BC-2330.40
+  capability_id_l1: BC-2330
+  capability_name: Marketplace Seller Operations Management
+  confidence: 0.8
+  evidence: POST /v2/offers/offer/{identifier}  create_offer_by_identifier_v2  Create An Offer (v2); 'you
+    will be able to manage your offers in an automated and scalable way'
+  reason: Seller API for creating marketplace offers with stock and sales-unit data — operating seller
+    listings on a marketplace platform.
+- tag: Get an offer
+  spec_file: takealot-get-an-offer-api-openapi.yml
+  capability_id: BC-2330.40
+  capability_id_l1: BC-2330
+  capability_name: Marketplace Seller Operations Management
+  confidence: 0.8
+  evidence: GET /v2/offers/offer/{identifier}  get_offer_by_identifier_v2  Get An Offer (v2); schemas
+    V2Offer, V2StockCover, V2OfferWarehouseStock
+  reason: Reads a seller's marketplace offer including stock cover and warehouse stock — management of
+    third-party seller listings on the host marketplace.
+- tag: Get offers
+  spec_file: takealot-get-offers-api-openapi.yml
+  capability_id: BC-2330.40
+  capability_id_l1: BC-2330
+  capability_name: Marketplace Seller Operations Management
+  confidence: 0.78
+  evidence: 'GET /v2/offers get_offers_v2 ''Get All Offers (v2)''; description: ''With this you will be
+    able to manage your offers in an automated and scalable way'' (Takealot Seller API); schemas V2Offer,
+    V2OfferWarehouseStock'
+  reason: The Seller API surfaces a marketplace seller's own listings ('offers') with price and stock
+    on the Takealot marketplace, which is precisely operating seller listings on a third-party marketplace.
+- tag: Update an offer
+  spec_file: takealot-update-an-offer-api-openapi.yml
+  capability_id: BC-2330.40
+  capability_id_l1: BC-2330
+  capability_name: Marketplace Seller Operations Management
+  confidence: 0.78
+  evidence: PATCH /v2/offers/offer/{identifier} update_offer_by_identifier_v2 'Update An Offer (v2)';
+    schemas V2OfferSingleUpdate, V2OfferLeadtimeStock
+  reason: Maintaining a seller's marketplace offer (price, lead time, stock) is direct execution of retailer-as-seller
+    marketplace listing operations.
