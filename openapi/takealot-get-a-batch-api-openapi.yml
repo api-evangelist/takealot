@@ -1,19 +1,10 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Takealot Seller Create a batch Get a batch API
-  description: The Takealot Seller API for Offers represents the initial phase of the Seller API. With this you will be able to manage your offers in an automated and scalable way.  Please ensure you have read the documentation for the Seller API, found at https://sellerportal.takealot.com/api, for an introduction and important information before attempting to use this API.  Please note that none of these requests are authorised if you are trying via the "try it out" button.  You will need to generate an API key and attach an Authorization header to each request in order to be correctly authorised against our API. This information can be found on the Seller Portal - https://seller.takealot.com/api/seller-api.  The below documentation describes each endpoint of the API.
+  title: Takealot Seller Get a batch API
+  description: The Takealot Seller API for Offers represents the initial phase of the Seller API.
   version: '2.0'
-host: seller-api.takealot.com
-basePath: /
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
-- text/csv
-- application/pdf
-- text/html
+servers:
+- url: https://seller-api.takealot.com/
 tags:
 - name: Get a batch
 paths:
@@ -25,136 +16,221 @@ paths:
       parameters:
       - name: batch_id
         in: path
-        type: string
         description: The ID of the batch you have submitted, provided to you by Takealot
         required: true
+        schema:
+          type: string
       tags:
       - Get a batch
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/V2OfferBatch'
           headers:
             x-RateLimit-Limit:
-              type: integer
+              schema:
+                type: integer
             x-RateLimit-Remaining:
-              type: integer
+              schema:
+                type: integer
             x-RateLimit-Reset:
-              type: string
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2OfferBatch'
+            text/csv:
+              schema:
+                $ref: '#/components/schemas/V2OfferBatch'
+            application/pdf:
+              schema:
+                $ref: '#/components/schemas/V2OfferBatch'
+            text/html:
+              schema:
+                $ref: '#/components/schemas/V2OfferBatch'
         '403':
           description: Forbidden Error
-          schema:
-            type: object
-            properties:
-              message:
-                type: string
           headers:
             x-RateLimit-Limit:
-              type: integer
+              schema:
+                type: integer
             x-RateLimit-Remaining:
-              type: integer
+              schema:
+                type: integer
             x-RateLimit-Reset:
-              type: string
-        '404':
-          description: Not Found Error
-          schema:
-            type: object
-            properties:
-              message:
+              schema:
                 type: string
-          headers:
-            x-RateLimit-Limit:
-              type: integer
-            x-RateLimit-Remaining:
-              type: integer
-            x-RateLimit-Reset:
-              type: string
-        '500':
-          description: Server Error
-          schema:
-            type: object
-            properties:
-              message:
-                type: string
-          headers:
-            x-RateLimit-Limit:
-              type: integer
-            x-RateLimit-Remaining:
-              type: integer
-            x-RateLimit-Reset:
-              type: string
-definitions:
-  V2OfferLeadtimeStock:
-    type: object
-    properties:
-      merchant_warehouse:
-        type: object
-        properties:
-          warehouse_id:
-            type: integer
-          name:
-            type: string
-      quantity_available:
-        type: integer
-  V2OfferBatch:
-    type: object
-    properties:
-      batch_id:
-        type: string
-      status:
-        type: object
-        properties:
-          description:
-            type: string
-          id:
-            type: integer
-      result:
-        type: array
-        items:
-          type: object
-          properties:
-            validation_errors:
-              type: array
-              items:
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
                   message:
                     type: string
-                  code:
+            text/csv:
+              schema:
+                type: object
+                properties:
+                  message:
                     type: string
-            offer:
-              type: object
-              properties:
-                selling_price:
-                  type: integer
-                rrp:
-                  type: integer
-                leadtime_days:
-                  type: integer
-                leadtime_stock:
-                  type: array
-                  items:
-                    $ref: '#/definitions/V2OfferLeadtimeStock'
-                stock_at_takealot:
-                  type: array
-                  items:
-                    $ref: '#/definitions/V2OfferWarehouseStock'
-                status:
-                  type: string
-                sku:
-                  type: string
-                offer_id:
-                  type: integer
-  V2OfferWarehouseStock:
-    type: object
-    properties:
-      warehouse:
-        type: object
-        properties:
-          warehouse_id:
-            type: integer
-          name:
-            type: string
-      quantity_available:
-        type: integer
+            application/pdf:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+            text/html:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '404':
+          description: Not Found Error
+          headers:
+            x-RateLimit-Limit:
+              schema:
+                type: integer
+            x-RateLimit-Remaining:
+              schema:
+                type: integer
+            x-RateLimit-Reset:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+            text/csv:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+            application/pdf:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+            text/html:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '500':
+          description: Server Error
+          headers:
+            x-RateLimit-Limit:
+              schema:
+                type: integer
+            x-RateLimit-Remaining:
+              schema:
+                type: integer
+            x-RateLimit-Reset:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+            text/csv:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+            application/pdf:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+            text/html:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+components:
+  schemas:
+    V2OfferLeadtimeStock:
+      type: object
+      properties:
+        merchant_warehouse:
+          type: object
+          properties:
+            warehouse_id:
+              type: integer
+            name:
+              type: string
+        quantity_available:
+          type: integer
+    V2OfferBatch:
+      type: object
+      properties:
+        batch_id:
+          type: string
+        status:
+          type: object
+          properties:
+            description:
+              type: string
+            id:
+              type: integer
+        result:
+          type: array
+          items:
+            type: object
+            properties:
+              validation_errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+                    code:
+                      type: string
+              offer:
+                type: object
+                properties:
+                  selling_price:
+                    type: integer
+                  rrp:
+                    type: integer
+                  leadtime_days:
+                    type: integer
+                  leadtime_stock:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/V2OfferLeadtimeStock'
+                  stock_at_takealot:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/V2OfferWarehouseStock'
+                  status:
+                    type: string
+                  sku:
+                    type: string
+                  offer_id:
+                    type: integer
+    V2OfferWarehouseStock:
+      type: object
+      properties:
+        warehouse:
+          type: object
+          properties:
+            warehouse_id:
+              type: integer
+            name:
+              type: string
+        quantity_available:
+          type: integer

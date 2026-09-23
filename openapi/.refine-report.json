@@ -1,18 +1,7 @@
 {
   "provider": "takealot",
   "sources": [
-    "takealot-create-a-batch-api-openapi.yml",
-    "takealot-create-an-offer-api-openapi.yml",
-    "takealot-get-a-batch-api-openapi.yml",
-    "takealot-get-an-offer-api-openapi.yml",
-    "takealot-get-offers-api-openapi.yml",
-    "takealot-get-offers-count-api-openapi.yml",
-    "takealot-get-stock-counts-api-openapi.yml",
-    "takealot-get-stock-health-api-openapi.yml",
-    "takealot-sales-summary-api-openapi.yml",
-    "takealot-update-an-offer-api-openapi.yml",
-    "takealot-view-sales-api-openapi.yml",
-    "takealot-view-sales-orders-api-openapi.yml"
+    "_original/takealot-seller-openapi.yml"
   ],
   "outputs": [
     "takealot-create-a-batch-api-openapi.yml",
@@ -23,14 +12,43 @@
     "takealot-get-offers-count-api-openapi.yml",
     "takealot-get-stock-counts-api-openapi.yml",
     "takealot-get-stock-health-api-openapi.yml",
-    "takealot-sales-summary-api-openapi.yml",
     "takealot-update-an-offer-api-openapi.yml",
+    "takealot-sales-summary-api-openapi.yml",
     "takealot-view-sales-api-openapi.yml",
     "takealot-view-sales-orders-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "takealot-seller-openapi.yml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "takealot-seller-openapi.yml: declared missing tag: Create a batch",
+    "takealot-seller-openapi.yml: declared missing tag: Create an offer",
+    "takealot-seller-openapi.yml: declared missing tag: Get a batch",
+    "takealot-seller-openapi.yml: declared missing tag: Get an offer",
+    "takealot-seller-openapi.yml: declared missing tag: Get offers",
+    "takealot-seller-openapi.yml: declared missing tag: Get offers count",
+    "takealot-seller-openapi.yml: declared missing tag: Get stock counts",
+    "takealot-seller-openapi.yml: declared missing tag: Get stock health",
+    "takealot-seller-openapi.yml: declared missing tag: Update an offer",
+    "takealot-seller-openapi.yml: declared missing tag: sales summary",
+    "takealot-seller-openapi.yml: declared missing tag: view sales",
+    "takealot-seller-openapi.yml: declared missing tag: view sales orders",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "takealot-create-a-batch-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-create-an-offer-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-get-a-batch-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-get-an-offer-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-get-offers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-get-offers-count-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-get-stock-counts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-get-stock-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-sales-summary-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-update-an-offer-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-view-sales-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "takealot-view-sales-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
