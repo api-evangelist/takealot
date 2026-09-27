@@ -332,25 +332,6 @@ components:
           type: integer
         stock_cover_days:
           type: integer
-    V2SalesUnits:
-      type: object
-      properties:
-        warehouse_id:
-          type: integer
-        sales_units:
-          type: integer
-    V2OfferWarehouseStock:
-      type: object
-      properties:
-        warehouse:
-          type: object
-          properties:
-            warehouse_id:
-              type: integer
-            name:
-              type: string
-        quantity_available:
-          type: integer
     V2Offer:
       type: object
       properties:
@@ -413,4 +394,23 @@ components:
         total_stock_cover:
           type: integer
         catalogue_quality_score:
+          type: integer
+    V2OfferWarehouseStock:
+      type: object
+      properties:
+        warehouse:
+          type: object
+          properties:
+            warehouse_id:
+              type: integer
+            name:
+              type: string
+        quantity_available:
+          type: integer
+    V2SalesUnits:
+      type: object
+      properties:
+        warehouse_id:
+          type: integer
+        sales_units:
           type: integer

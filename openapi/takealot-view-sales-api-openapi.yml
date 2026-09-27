@@ -74,6 +74,24 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    PageSummary:
+      type: object
+      properties:
+        page_size:
+          type: integer
+        page_number:
+          type: integer
+        total:
+          type: integer
+    ViewSalesResponse:
+      type: object
+      properties:
+        page_summary:
+          $ref: '#/components/schemas/PageSummary'
+        sales:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sale'
     Sale:
       type: object
       properties:
@@ -127,24 +145,6 @@ components:
           type: string
         stock_source_region:
           type: string
-    PageSummary:
-      type: object
-      properties:
-        page_size:
-          type: integer
-        page_number:
-          type: integer
-        total:
-          type: integer
-    ViewSalesResponse:
-      type: object
-      properties:
-        page_summary:
-          $ref: '#/components/schemas/PageSummary'
-        sales:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sale'
     Error:
       type: object
       properties:

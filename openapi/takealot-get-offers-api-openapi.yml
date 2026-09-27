@@ -230,19 +230,6 @@ paths:
                     type: string
 components:
   schemas:
-    V2Offers:
-      type: object
-      properties:
-        total_results:
-          type: integer
-        page_size:
-          type: integer
-        page_number:
-          type: integer
-        offers:
-          type: array
-          items:
-            $ref: '#/components/schemas/V2Offer'
     V2OfferLeadtimeStock:
       type: object
       properties:
@@ -263,25 +250,19 @@ components:
           type: integer
         stock_cover_days:
           type: integer
-    V2SalesUnits:
+    V2Offers:
       type: object
       properties:
-        warehouse_id:
+        total_results:
           type: integer
-        sales_units:
+        page_size:
           type: integer
-    V2OfferWarehouseStock:
-      type: object
-      properties:
-        warehouse:
-          type: object
-          properties:
-            warehouse_id:
-              type: integer
-            name:
-              type: string
-        quantity_available:
+        page_number:
           type: integer
+        offers:
+          type: array
+          items:
+            $ref: '#/components/schemas/V2Offer'
     V2Offer:
       type: object
       properties:
@@ -344,4 +325,23 @@ components:
         total_stock_cover:
           type: integer
         catalogue_quality_score:
+          type: integer
+    V2OfferWarehouseStock:
+      type: object
+      properties:
+        warehouse:
+          type: object
+          properties:
+            warehouse_id:
+              type: integer
+            name:
+              type: string
+        quantity_available:
+          type: integer
+    V2SalesUnits:
+      type: object
+      properties:
+        warehouse_id:
+          type: integer
+        sales_units:
           type: integer

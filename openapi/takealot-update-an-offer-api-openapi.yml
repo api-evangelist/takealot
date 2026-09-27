@@ -418,13 +418,20 @@ components:
           type: integer
         stock_cover_days:
           type: integer
-    V2SalesUnits:
+    V2OfferUpdateSuccessResponse:
       type: object
       properties:
-        warehouse_id:
-          type: integer
-        sales_units:
-          type: integer
+        offer:
+          $ref: '#/components/schemas/V2Offer'
+        validation_errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+              code:
+                type: string
     V2OfferSingleUpdate:
       type: object
       properties:
@@ -457,32 +464,6 @@ components:
           enum:
           - Disable
           - Re-enable
-    V2OfferUpdateSuccessResponse:
-      type: object
-      properties:
-        offer:
-          $ref: '#/components/schemas/V2Offer'
-        validation_errors:
-          type: array
-          items:
-            type: object
-            properties:
-              message:
-                type: string
-              code:
-                type: string
-    V2OfferWarehouseStock:
-      type: object
-      properties:
-        warehouse:
-          type: object
-          properties:
-            warehouse_id:
-              type: integer
-            name:
-              type: string
-        quantity_available:
-          type: integer
     V2Offer:
       type: object
       properties:
@@ -545,4 +526,23 @@ components:
         total_stock_cover:
           type: integer
         catalogue_quality_score:
+          type: integer
+    V2OfferWarehouseStock:
+      type: object
+      properties:
+        warehouse:
+          type: object
+          properties:
+            warehouse_id:
+              type: integer
+            name:
+              type: string
+        quantity_available:
+          type: integer
+    V2SalesUnits:
+      type: object
+      properties:
+        warehouse_id:
+          type: integer
+        sales_units:
           type: integer

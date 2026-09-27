@@ -62,6 +62,15 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SaleSummary'
+    SaleSummary:
+      type: object
+      properties:
+        date_range:
+          type: string
+        total:
+          type: number
+        quantity:
+          type: integer
     Error:
       type: object
       properties:
@@ -71,13 +80,4 @@ components:
           type: string
         status:
           format: int32
-          type: integer
-    SaleSummary:
-      type: object
-      properties:
-        date_range:
-          type: string
-        total:
-          type: number
-        quantity:
           type: integer

@@ -224,6 +224,18 @@ components:
                     type: string
                   offer_id:
                     type: integer
+    V2OfferWarehouseStock:
+      type: object
+      properties:
+        warehouse:
+          type: object
+          properties:
+            warehouse_id:
+              type: integer
+            name:
+              type: string
+        quantity_available:
+          type: integer
     V2OfferBatchCreateUpdate:
       type: object
       properties:
@@ -261,15 +273,3 @@ components:
           enum:
           - Disable
           - Re-enable
-    V2OfferWarehouseStock:
-      type: object
-      properties:
-        warehouse:
-          type: object
-          properties:
-            warehouse_id:
-              type: integer
-            name:
-              type: string
-        quantity_available:
-          type: integer

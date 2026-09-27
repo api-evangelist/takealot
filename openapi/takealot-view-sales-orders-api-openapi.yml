@@ -148,15 +148,15 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    ViewSalesOrdersResponse:
+    PageSummary:
       type: object
       properties:
-        page_summary:
-          $ref: '#/components/schemas/PageSummary'
-        sales:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sale'
+        page_size:
+          type: integer
+        page_number:
+          type: integer
+        total:
+          type: integer
     Sale:
       type: object
       properties:
@@ -210,15 +210,6 @@ components:
           type: string
         stock_source_region:
           type: string
-    PageSummary:
-      type: object
-      properties:
-        page_size:
-          type: integer
-        page_number:
-          type: integer
-        total:
-          type: integer
     Error:
       type: object
       properties:
@@ -249,3 +240,12 @@ components:
                 type: string
               downloadable:
                 type: boolean
+    ViewSalesOrdersResponse:
+      type: object
+      properties:
+        page_summary:
+          $ref: '#/components/schemas/PageSummary'
+        sales:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sale'
