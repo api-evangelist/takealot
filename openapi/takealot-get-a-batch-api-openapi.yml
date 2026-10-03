@@ -173,6 +173,18 @@ components:
               type: string
         quantity_available:
           type: integer
+    V2OfferWarehouseStock:
+      type: object
+      properties:
+        warehouse:
+          type: object
+          properties:
+            warehouse_id:
+              type: integer
+            name:
+              type: string
+        quantity_available:
+          type: integer
     V2OfferBatch:
       type: object
       properties:
@@ -222,15 +234,3 @@ components:
                     type: string
                   offer_id:
                     type: integer
-    V2OfferWarehouseStock:
-      type: object
-      properties:
-        warehouse:
-          type: object
-          properties:
-            warehouse_id:
-              type: integer
-            name:
-              type: string
-        quantity_available:
-          type: integer

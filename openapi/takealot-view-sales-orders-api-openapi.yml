@@ -148,15 +148,45 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    PageSummary:
+    CustomerInvoicesResponse:
       type: object
       properties:
-        page_size:
+        documents:
+          type: array
+          items:
+            type: object
+            properties:
+              document_id:
+                type: integer
+              document_date:
+                type: string
+              document_type:
+                type: string
+              document_reason:
+                type: string
+              file_name:
+                type: string
+              downloadable:
+                type: boolean
+    Error:
+      type: object
+      properties:
+        fields:
+          type: string
+        message:
+          type: string
+        status:
+          format: int32
           type: integer
-        page_number:
-          type: integer
-        total:
-          type: integer
+    ViewSalesOrdersResponse:
+      type: object
+      properties:
+        page_summary:
+          $ref: '#/components/schemas/PageSummary'
+        sales:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sale'
     Sale:
       type: object
       properties:
@@ -210,42 +240,12 @@ components:
           type: string
         stock_source_region:
           type: string
-    Error:
+    PageSummary:
       type: object
       properties:
-        fields:
-          type: string
-        message:
-          type: string
-        status:
-          format: int32
+        page_size:
           type: integer
-    CustomerInvoicesResponse:
-      type: object
-      properties:
-        documents:
-          type: array
-          items:
-            type: object
-            properties:
-              document_id:
-                type: integer
-              document_date:
-                type: string
-              document_type:
-                type: string
-              document_reason:
-                type: string
-              file_name:
-                type: string
-              downloadable:
-                type: boolean
-    ViewSalesOrdersResponse:
-      type: object
-      properties:
-        page_summary:
-          $ref: '#/components/schemas/PageSummary'
-        sales:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sale'
+        page_number:
+          type: integer
+        total:
+          type: integer

@@ -74,6 +74,16 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        fields:
+          type: string
+        message:
+          type: string
+        status:
+          format: int32
+          type: integer
     PageSummary:
       type: object
       properties:
@@ -83,15 +93,6 @@ components:
           type: integer
         total:
           type: integer
-    ViewSalesResponse:
-      type: object
-      properties:
-        page_summary:
-          $ref: '#/components/schemas/PageSummary'
-        sales:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sale'
     Sale:
       type: object
       properties:
@@ -145,13 +146,12 @@ components:
           type: string
         stock_source_region:
           type: string
-    Error:
+    ViewSalesResponse:
       type: object
       properties:
-        fields:
-          type: string
-        message:
-          type: string
-        status:
-          format: int32
-          type: integer
+        page_summary:
+          $ref: '#/components/schemas/PageSummary'
+        sales:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sale'
