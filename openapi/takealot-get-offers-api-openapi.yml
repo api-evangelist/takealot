@@ -230,38 +230,12 @@ paths:
                     type: string
 components:
   schemas:
-    V2StockCover:
+    V2SalesUnits:
       type: object
-      description: please note that 0 means there is no stock and hence no cover. -1 means there have been no sales units in the past 30 days hence stock cover cannot be determined.
       properties:
         warehouse_id:
           type: integer
-        stock_cover_days:
-          type: integer
-    V2Offers:
-      type: object
-      properties:
-        total_results:
-          type: integer
-        page_size:
-          type: integer
-        page_number:
-          type: integer
-        offers:
-          type: array
-          items:
-            $ref: '#/components/schemas/V2Offer'
-    V2OfferLeadtimeStock:
-      type: object
-      properties:
-        merchant_warehouse:
-          type: object
-          properties:
-            warehouse_id:
-              type: integer
-            name:
-              type: string
-        quantity_available:
+        sales_units:
           type: integer
     V2Offer:
       type: object
@@ -326,6 +300,39 @@ components:
           type: integer
         catalogue_quality_score:
           type: integer
+    V2Offers:
+      type: object
+      properties:
+        total_results:
+          type: integer
+        page_size:
+          type: integer
+        page_number:
+          type: integer
+        offers:
+          type: array
+          items:
+            $ref: '#/components/schemas/V2Offer'
+    V2OfferLeadtimeStock:
+      type: object
+      properties:
+        merchant_warehouse:
+          type: object
+          properties:
+            warehouse_id:
+              type: integer
+            name:
+              type: string
+        quantity_available:
+          type: integer
+    V2StockCover:
+      type: object
+      description: please note that 0 means there is no stock and hence no cover. -1 means there have been no sales units in the past 30 days hence stock cover cannot be determined.
+      properties:
+        warehouse_id:
+          type: integer
+        stock_cover_days:
+          type: integer
     V2OfferWarehouseStock:
       type: object
       properties:
@@ -337,11 +344,4 @@ components:
             name:
               type: string
         quantity_available:
-          type: integer
-    V2SalesUnits:
-      type: object
-      properties:
-        warehouse_id:
-          type: integer
-        sales_units:
           type: integer

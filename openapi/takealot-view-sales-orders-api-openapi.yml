@@ -168,6 +168,15 @@ components:
                 type: string
               downloadable:
                 type: boolean
+    ViewSalesOrdersResponse:
+      type: object
+      properties:
+        page_summary:
+          $ref: '#/components/schemas/PageSummary'
+        sales:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sale'
     Error:
       type: object
       properties:
@@ -178,15 +187,6 @@ components:
         status:
           format: int32
           type: integer
-    ViewSalesOrdersResponse:
-      type: object
-      properties:
-        page_summary:
-          $ref: '#/components/schemas/PageSummary'
-        sales:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sale'
     Sale:
       type: object
       properties:
