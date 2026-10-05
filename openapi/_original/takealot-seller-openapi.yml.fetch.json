@@ -1,0 +1,12 @@
+{
+ "url": "https://seller-api.takealot.com/api-docs/swagger.json",
+ "requested_url": "https://seller-api.takealot.com/api-docs/swagger.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 62210,
+ "sha256": "a6277732ab1cf82d01343bc8b0e45a674fe2190c90268476288545030a72254f",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
