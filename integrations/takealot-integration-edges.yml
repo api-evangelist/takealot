@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/takealot/integrations
+- https://n8n.io/integrations/takealot/
+- https://composio.dev/toolkits/takealot
+- https://monid.ai/tools/takealot
+checked:
+- https://composio.dev/toolkits/takealot
+- https://monid.ai/tools/takealot
+- https://n8n.io/integrations/takealot/
+- https://zapier.com/apps/takealot/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
