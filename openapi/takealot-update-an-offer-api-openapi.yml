@@ -398,13 +398,6 @@ paths:
         required: true
 components:
   schemas:
-    V2SalesUnits:
-      type: object
-      properties:
-        warehouse_id:
-          type: integer
-        sales_units:
-          type: integer
     V2Offer:
       type: object
       properties:
@@ -482,6 +475,14 @@ components:
                 type: string
               code:
                 type: string
+    V2StockCover:
+      type: object
+      description: please note that 0 means there is no stock and hence no cover. -1 means there have been no sales units in the past 30 days hence stock cover cannot be determined.
+      properties:
+        warehouse_id:
+          type: integer
+        stock_cover_days:
+          type: integer
     V2OfferSingleUpdate:
       type: object
       properties:
@@ -526,14 +527,6 @@ components:
               type: string
         quantity_available:
           type: integer
-    V2StockCover:
-      type: object
-      description: please note that 0 means there is no stock and hence no cover. -1 means there have been no sales units in the past 30 days hence stock cover cannot be determined.
-      properties:
-        warehouse_id:
-          type: integer
-        stock_cover_days:
-          type: integer
     V2OfferWarehouseStock:
       type: object
       properties:
@@ -545,4 +538,11 @@ components:
             name:
               type: string
         quantity_available:
+          type: integer
+    V2SalesUnits:
+      type: object
+      properties:
+        warehouse_id:
+          type: integer
+        sales_units:
           type: integer

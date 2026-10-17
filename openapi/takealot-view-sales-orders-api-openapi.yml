@@ -148,6 +148,15 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    PageSummary:
+      type: object
+      properties:
+        page_size:
+          type: integer
+        page_number:
+          type: integer
+        total:
+          type: integer
     CustomerInvoicesResponse:
       type: object
       properties:
@@ -177,16 +186,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Sale'
-    Error:
-      type: object
-      properties:
-        fields:
-          type: string
-        message:
-          type: string
-        status:
-          format: int32
-          type: integer
     Sale:
       type: object
       properties:
@@ -240,12 +239,13 @@ components:
           type: string
         stock_source_region:
           type: string
-    PageSummary:
+    Error:
       type: object
       properties:
-        page_size:
-          type: integer
-        page_number:
-          type: integer
-        total:
+        fields:
+          type: string
+        message:
+          type: string
+        status:
+          format: int32
           type: integer

@@ -398,38 +398,6 @@ paths:
         required: true
 components:
   schemas:
-    V2OfferSingleCreate:
-      type: object
-      properties:
-        sku:
-          type: string
-          description: The unique SKU of the offer. Please send us a unique sku whose length is less than 256 characters.
-        selling_price:
-          type: integer
-          description: The price at which the offer will sell for on Takealot (promotion prices will be prioitised). Please ensure you supply us with a positive whole number.
-        rrp:
-          type: integer
-          description: The original price of the offer. Please ensure you supply us with a positive whole number.
-        leadtime_days:
-          type: integer
-          description: The leadtime days of the offer. You can remove leadtime days from your offer by sending through -1.
-        leadtime_stock:
-          type: array
-          description: The leadtime stock of the offer. Please ensure that the merchant_warehouse_id is correct, found at https://seller.takealot.com/api/seller-api/offers and send a positive whole number for the quantity.
-          items:
-            type: object
-            properties:
-              merchant_warehouse_id:
-                type: integer
-              quantity:
-                type: integer
-    V2SalesUnits:
-      type: object
-      properties:
-        warehouse_id:
-          type: integer
-        sales_units:
-          type: integer
     V2Offer:
       type: object
       properties:
@@ -507,6 +475,39 @@ components:
                 type: string
               code:
                 type: string
+    V2StockCover:
+      type: object
+      description: please note that 0 means there is no stock and hence no cover. -1 means there have been no sales units in the past 30 days hence stock cover cannot be determined.
+      properties:
+        warehouse_id:
+          type: integer
+        stock_cover_days:
+          type: integer
+    V2OfferSingleCreate:
+      type: object
+      properties:
+        sku:
+          type: string
+          description: The unique SKU of the offer. Please send us a unique sku whose length is less than 256 characters.
+        selling_price:
+          type: integer
+          description: The price at which the offer will sell for on Takealot (promotion prices will be prioitised). Please ensure you supply us with a positive whole number.
+        rrp:
+          type: integer
+          description: The original price of the offer. Please ensure you supply us with a positive whole number.
+        leadtime_days:
+          type: integer
+          description: The leadtime days of the offer. You can remove leadtime days from your offer by sending through -1.
+        leadtime_stock:
+          type: array
+          description: The leadtime stock of the offer. Please ensure that the merchant_warehouse_id is correct, found at https://seller.takealot.com/api/seller-api/offers and send a positive whole number for the quantity.
+          items:
+            type: object
+            properties:
+              merchant_warehouse_id:
+                type: integer
+              quantity:
+                type: integer
     V2OfferLeadtimeStock:
       type: object
       properties:
@@ -519,14 +520,6 @@ components:
               type: string
         quantity_available:
           type: integer
-    V2StockCover:
-      type: object
-      description: please note that 0 means there is no stock and hence no cover. -1 means there have been no sales units in the past 30 days hence stock cover cannot be determined.
-      properties:
-        warehouse_id:
-          type: integer
-        stock_cover_days:
-          type: integer
     V2OfferWarehouseStock:
       type: object
       properties:
@@ -538,4 +531,11 @@ components:
             name:
               type: string
         quantity_available:
+          type: integer
+    V2SalesUnits:
+      type: object
+      properties:
+        warehouse_id:
+          type: integer
+        sales_units:
           type: integer

@@ -55,6 +55,13 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    SalesSummaryResponse:
+      type: object
+      properties:
+        sales_summary:
+          type: array
+          items:
+            $ref: '#/components/schemas/SaleSummary'
     Error:
       type: object
       properties:
@@ -74,10 +81,3 @@ components:
           type: number
         quantity:
           type: integer
-    SalesSummaryResponse:
-      type: object
-      properties:
-        sales_summary:
-          type: array
-          items:
-            $ref: '#/components/schemas/SaleSummary'
