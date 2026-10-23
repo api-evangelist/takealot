@@ -546,3 +546,9 @@ components:
           type: integer
         sales_units:
           type: integer
+x-provenance:
+  method: harvested
+  publisher: Takealot
+  source: https://seller-api.takealot.com/api-docs/swagger.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
